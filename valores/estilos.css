@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.contenedor {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    background-color: #008cba;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.valores {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.ejemplos {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.ejemplo h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.ejemplo ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.valores-empresa {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
