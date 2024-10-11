@@ -2,6 +2,9 @@
 
 ---
 
+## Título del proyecto : "Web para Planificación de TI"
+
+
 ## Cómo elaborar un Plan Estratégico de Tecnologías de Información - PETI
 
 El éxito de las organizaciones reside en gran parte en la capacidad que tienen sus directivos en ejecutar una estrategia más que en la calidad de la estrategia en sí. Su planificación y asignación de recursos son fundamentales para el logro de la misma. En este sentido, un Plan Estratégico de TI puede entenderse como el conjunto de acciones que han de llevarse a cabo para alinear los recursos y potencialidades tecnológicas al objeto de conseguir el estado deseado, es decir, adaptación y adquisición de competitividad empresarial, alineados al plan estratégico general.
