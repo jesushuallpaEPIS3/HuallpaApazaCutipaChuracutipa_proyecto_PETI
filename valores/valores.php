@@ -51,6 +51,7 @@
             <h3>En este apartado exponga los Valores de su empresa</h3>
             <textarea rows="5" cols="50" placeholder="Escriba aquí los valores de su empresa..."></textarea>
         </div>
+        <a href="/HuallpaApazaCutipaChuracutipa_proyecto_PETI/home.php"><button>Guardar</button></a>
     </div>
 </body>
 </html>
