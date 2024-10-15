@@ -1,5 +1,6 @@
 <?php
     require_once("view/head/header.php");
+    //require_once("seguridad.php");
 ?>
 <style>
         :root {
@@ -132,6 +133,8 @@
     </style>
     
 <div class="container">
+    
+    <h1><?= $_SESSION['user_id'] ?></h1>
         <button class="button-large" aria-label="Informacion de la Empresa" onclick="location.href='view/informacion/create.php'">INFORMACION DE LA EMPRESA</button>
         <div class="button-container" role="group" aria-label="Opciones de información de la empresa">
             <button class="button" data-number="1" aria-label="Misión" onclick="location.href='mision/mision.php'">MISIÓN</button>
@@ -149,7 +152,7 @@
             <button class="button" data-number="4" aria-label="Objetivos" onclick="location.href='objetivos/objetivos.php'">OBJETIVOS</button>
             <button class="button" data-number="8" aria-label="Las 5 fuerzas de Porter" onclick="location.href='las_5_fuerzas/las_5_fuerzas.php'">LAS 5 FUERZAS DE PORTER</button>
         </div>
-
+<a href="logout.php" class="btn btn-danger">Salir</a>
 <?php
     require_once("view/head/footer.php");
 ?>
