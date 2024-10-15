@@ -13,19 +13,7 @@
             --error-color: #e74c3c;
             --success-color: #2ecc71;
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
