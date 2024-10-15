@@ -81,7 +81,7 @@
             <h3><?php echo $date['nombre'] ?></h3>
             <p><?php echo $date['descripcion'] ?></p>
         </div>
-        <a href="edit.php" class="btn btn-secondary">Modificar</a>
+        <a href="edit.php?id=<?= $date['id']?>" class="btn btn-secondary">Modificar</a>
     </div>
 
 <?php

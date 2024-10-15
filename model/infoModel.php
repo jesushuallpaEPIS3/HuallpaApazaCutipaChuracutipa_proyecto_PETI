@@ -17,5 +17,15 @@
             $query->bindParam(":id",$id);
             return ($query->execute()) ? $query->fetch() : false;
         }
+        // public function index(){
+
+        // }
+        public function update($id,$nombre,$descripcion){
+            $query = $this->PDO->prepare("Update empresa SET nombre = :nombre, descripcion = :descripcion where id = :id");
+            $query->bindParam(":nombre",$nombre);
+            $query->bindParam(":descripcion",$descripcion);
+            $query->bindParam(":id",$id);
+            return ($query->execute()) ? $id : false ;
+        }
     }
 ?>
