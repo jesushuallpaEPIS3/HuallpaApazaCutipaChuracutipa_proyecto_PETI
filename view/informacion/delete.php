@@ -1,1 +1,0 @@
-<!-- Requerimiento de eliminar empresas -->

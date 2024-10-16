@@ -2,7 +2,8 @@
     require_once("../head/header.php");
     require_once("../../controller/infoController.php");
     $obj = new infoController();
-    $date = $obj->show($_GET['id'])
+    //$date = $obj->show($_GET['id'])
+    $date = $obj->show($_SESSION['user_id']);
 ?>
 
     <style>

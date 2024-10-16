@@ -1,7 +1,7 @@
 <?php
     class db{
         private $host= "localhost";
-        private $dbname = "empresa";
+        private $dbname = "peti";
         private $user = "root";
         private $password = "";
         public function conexion(){

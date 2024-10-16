@@ -1,7 +1,4 @@
-<?php
-    require_once("view/head/header.php");
-    //require_once("seguridad.php");
-?>
+
 <style>
         :root {
             --primary-color: #008B8B;
@@ -18,7 +15,17 @@
             padding: 0;
         }
 
-
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--background-color) 0%, #c3cfe2 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
         .container {
             max-width: 1200px;
             width: 100%;
@@ -133,9 +140,8 @@
     </style>
     
 <div class="container">
-    
-    <h1><?= $_SESSION['user_id'] ?></h1>
-        <button class="button-large" aria-label="Informacion de la Empresa" onclick="location.href='view/informacion/create.php'">INFORMACION DE LA EMPRESA</button>
+        
+        <button class="button-large" aria-label="Informacion de la Empresa" onclick="location.href='view/informacion/verify.php'">INFORMACION DE LA EMPRESA</button>
         <div class="button-container" role="group" aria-label="Opciones de información de la empresa">
             <button class="button" data-number="1" aria-label="Misión" onclick="location.href='mision/mision.php'">MISIÓN</button>
             <button class="button" data-number="5" aria-label="Análisis interno y externo" onclick="location.href='analisis_interno_externo/analisis_interno_externo.php'">ANÁLISIS INTERNO Y EXTERNO</button>
@@ -152,7 +158,3 @@
             <button class="button" data-number="4" aria-label="Objetivos" onclick="location.href='objetivos/objetivos.php'">OBJETIVOS</button>
             <button class="button" data-number="8" aria-label="Las 5 fuerzas de Porter" onclick="location.href='las_5_fuerzas/las_5_fuerzas.php'">LAS 5 FUERZAS DE PORTER</button>
         </div>
-<a href="logout.php" class="btn btn-danger">Salir</a>
-<?php
-    require_once("view/head/footer.php");
-?>
