@@ -23,7 +23,7 @@
                 Menú
               </a>
               <ul class="dropdown-menu ">
-                <li><a class="dropdown-item" href="/peti/view/informacion/">Información</a></li>
+                <li><a class="dropdown-item" href="#">Información</a></li>
                 <li><a class="dropdown-item" href="#">Misión</a></li>
                 <li><a class="dropdown-item" href="#">Visión</a></li>
                 <li><a class="dropdown-item" href="#">Valores</a></li>
