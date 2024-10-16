@@ -7,7 +7,7 @@
             $this->PDO = $con->conexion();
         }
         public function insertar($id, $valor){
-            $query = $this->PDO->prepare("INSERT INTO valores(id, valor) VALUES (:id, :valor)");
+            $query = $this->PDO->prepare("INSERT INTO valores(id, valores) VALUES (:id, :valor)");
             $query->bindParam(":id", $id);
             $query->bindParam(":valor", $valor);
             return $query->execute();
