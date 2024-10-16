@@ -12,27 +12,28 @@
     <div class="container-fluid bg-dark p-2 mb-3">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/peti/">Inicio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="/peti/">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
+      </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+          <ul class="navbar-nav">
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Menú
-            </a>
-            <ul class="dropdown-menu ">
+              </a>
+              <ul class="dropdown-menu ">
                 <li><a class="dropdown-item" href="/peti/view/informacion/">Información</a></li>
                 <li><a class="dropdown-item" href="#">Misión</a></li>
                 <li><a class="dropdown-item" href="#">Visión</a></li>
                 <li><a class="dropdown-item" href="#">Valores</a></li>
                 <li><a class="dropdown-item" href="#">Objetivos</a></li>
-            </ul>
+              </ul>
             </li>
-        </ul>
+          </ul>
         </div>
+        <a href="../sesion/salir.php" class="btn btn-danger">Cerrar Sesión</a>
     </div>
-    </nav>
+  </nav>
 </div>
 <div class="container-fluid">
