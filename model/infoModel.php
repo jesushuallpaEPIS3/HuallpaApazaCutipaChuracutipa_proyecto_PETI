@@ -31,7 +31,8 @@
         public function comprobar($id){
             $query = $this->PDO->prepare("Select * from empresa where id = :id");
             $query->bindParam(":id",$id);
-            return ($query->execute()) ? true : false ;
+            $query->execute();
+            return $query->rowCount() > 0;
         }
     }
 ?>

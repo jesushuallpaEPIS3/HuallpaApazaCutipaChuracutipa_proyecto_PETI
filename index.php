@@ -151,7 +151,7 @@
             <button class="button" data-number="6" aria-label="Cadena de valor" onclick="location.href='cadena_de_valor/cadena_de_valor.php'">CADENA DE VALOR</button>
             <button class="button" data-number="10" aria-label="Identificación estrategia" onclick="location.href='identificacion_estrategia/identificacion_estrategia.php'">IDENTIFICACIÓN ESTRATEGIA</button>
 
-            <button class="button" data-number="3" aria-label="Valores" onclick="location.href='valores/valores.php'">VALORES</button>
+            <button class="button" data-number="3" aria-label="Valores" onclick="location.href='view/valores/verify.php'">VALORES</button>
             <button class="button" data-number="7" aria-label="Matriz participación" onclick="location.href='matriz_participacion/matriz_participacion.php'">MATRIZ PARTICIPACIÓN</button>
             <button class="button" data-number="11" aria-label="Matriz CAME" onclick="location.href='matriz_came/matriz_came.php'">MATRIZ CAME</button>
 
