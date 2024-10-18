@@ -40,20 +40,26 @@
                     <th>OBJETIVOS ESPECÍFICOS</th>
                 </tr>
                 <tr>
-                    <td rowspan="3"><textarea name="mision" placeholder="Ingrese la misión de su empresa"></textarea></td>
+                    <td rowspan="3"><textarea name="mision" placeholder="no escribir nada acá xd"></textarea></td>
                     <td><textarea name="objetivo_estrategico_1" placeholder="Objetivo estratégico 1"></textarea></td>
-                    <td><textarea name="objetivo_especifico_1_1" placeholder="Objetivo específico 1.1"></textarea>
-                    <textarea name="objetivo_especifico_1_1" placeholder="Objetivo específico 1.1"></textarea></td>
+                    <td>
+                        <textarea name="objetivo_especifico_1_1" placeholder="Objetivo específico 1.1"></textarea>
+                        <textarea name="objetivo_especifico_1_2" placeholder="Objetivo específico 1.2"></textarea>
+                    </td>
                 </tr>
                 <tr>
                     <td><textarea name="objetivo_estrategico_2" placeholder="Objetivo estratégico 2"></textarea></td>
-                    <td><textarea name="objetivo_especifico_2_1" placeholder="Objetivo específico 2.1"></textarea>
-                    <textarea name="objetivo_especifico_1_1" placeholder="Objetivo específico 1.1"></textarea></td>
+                    <td>
+                        <textarea name="objetivo_especifico_2_1" placeholder="Objetivo específico 2.1"></textarea>
+                        <textarea name="objetivo_especifico_2_2" placeholder="Objetivo específico 2.2"></textarea>
+                    </td>
                 </tr>
                 <tr>
                     <td><textarea name="objetivo_estrategico_3" placeholder="Objetivo estratégico 3"></textarea></td>
-                    <td><textarea name="objetivo_especifico_3_1" placeholder="Objetivo específico 3.1"></textarea>
-                    <textarea name="objetivo_especifico_1_1" placeholder="Objetivo específico 1.1"></textarea></td>
+                    <td>
+                        <textarea name="objetivo_especifico_3_1" placeholder="Objetivo específico 3.1"></textarea>
+                        <textarea name="objetivo_especifico_3_2" placeholder="Objetivo específico 3.2"></textarea>
+                    </td>
                 </tr>
             </table>
             <br>

@@ -1,4 +1,32 @@
 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+<div class="container">
+        
+        <button class="button-large" aria-label="Informacion de la Empresa" onclick="location.href='view/informacion/verify.php'">INFORMACION DE LA EMPRESA</button>
+        <div class="button-container" role="group" aria-label="Opciones de información de la empresa">
+            <button class="button" data-number="1" aria-label="Misión" onclick="location.href='view/mision/verify.php'">MISIÓN</button>
+            <button class="button" data-number="5" aria-label="Análisis interno y externo" onclick="location.href='analisis_interno_externo/analisis_interno_externo.php'">ANÁLISIS INTERNO Y EXTERNO</button>
+            <button class="button" data-number="9" aria-label="PEST" onclick="location.href='pest/pest.php'">PEST</button>
+
+            <button class="button" data-number="2" aria-label="Visión" onclick="location.href='view/vision/verify.php'">VISIÓN</button>
+            <button class="button" data-number="6" aria-label="Cadena de valor" onclick="location.href='cadena_de_valor/cadena_de_valor.php'">CADENA DE VALOR</button>
+            <button class="button" data-number="10" aria-label="Identificación estrategia" onclick="location.href='identificacion_estrategia/identificacion_estrategia.php'">IDENTIFICACIÓN ESTRATEGIA</button>
+
+            <button class="button" data-number="3" aria-label="Valores" onclick="location.href='view/valores/verify.php'">VALORES</button>
+            <button class="button" data-number="7" aria-label="Matriz participación" onclick="location.href='matriz_participacion/matriz_participacion.php'">MATRIZ PARTICIPACIÓN</button>
+            <button class="button" data-number="11" aria-label="Matriz CAME" onclick="location.href='matriz_came/matriz_came.php'">MATRIZ CAME</button>
+
+            <button class="button" data-number="4" aria-label="Objetivos" onclick="location.href='view/objetivos/verify.php'">OBJETIVOS</button>
+            <button class="button" data-number="8" aria-label="Las 5 fuerzas de Porter" onclick="location.href='las_5_fuerzas/las_5_fuerzas.php'">LAS 5 FUERZAS DE PORTER</button>
+        </div>
+</body>
+</html>
 <style>
         :root {
             --primary-color: #008B8B;
@@ -139,22 +167,4 @@
         }
     </style>
     
-<div class="container">
-        
-        <button class="button-large" aria-label="Informacion de la Empresa" onclick="location.href='view/informacion/verify.php'">INFORMACION DE LA EMPRESA</button>
-        <div class="button-container" role="group" aria-label="Opciones de información de la empresa">
-            <button class="button" data-number="1" aria-label="Misión" onclick="location.href='view/mision/verify.php'">MISIÓN</button>
-            <button class="button" data-number="5" aria-label="Análisis interno y externo" onclick="location.href='analisis_interno_externo/analisis_interno_externo.php'">ANÁLISIS INTERNO Y EXTERNO</button>
-            <button class="button" data-number="9" aria-label="PEST" onclick="location.href='pest/pest.php'">PEST</button>
 
-            <button class="button" data-number="2" aria-label="Visión" onclick="location.href='view/vision/verify.php'">VISIÓN</button>
-            <button class="button" data-number="6" aria-label="Cadena de valor" onclick="location.href='cadena_de_valor/cadena_de_valor.php'">CADENA DE VALOR</button>
-            <button class="button" data-number="10" aria-label="Identificación estrategia" onclick="location.href='identificacion_estrategia/identificacion_estrategia.php'">IDENTIFICACIÓN ESTRATEGIA</button>
-
-            <button class="button" data-number="3" aria-label="Valores" onclick="location.href='view/valores/verify.php'">VALORES</button>
-            <button class="button" data-number="7" aria-label="Matriz participación" onclick="location.href='matriz_participacion/matriz_participacion.php'">MATRIZ PARTICIPACIÓN</button>
-            <button class="button" data-number="11" aria-label="Matriz CAME" onclick="location.href='matriz_came/matriz_came.php'">MATRIZ CAME</button>
-
-            <button class="button" data-number="4" aria-label="Objetivos" onclick="location.href='objetivos/objetivos.php'">OBJETIVOS</button>
-            <button class="button" data-number="8" aria-label="Las 5 fuerzas de Porter" onclick="location.href='las_5_fuerzas/las_5_fuerzas.php'">LAS 5 FUERZAS DE PORTER</button>
-        </div>
