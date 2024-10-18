@@ -1,5 +1,5 @@
 <?php
-    class visionModel{
+    class AnalisisInternoExternoModel{
         private $PDO;
         public function __construct(){
             require_once("../../config/db.php");

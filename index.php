@@ -15,7 +15,7 @@
             <button class="button" data-number="9" aria-label="PEST" onclick="location.href='pest/pest.php'">PEST</button>
 
             <button class="button" data-number="2" aria-label="Visión" onclick="location.href='view/vision/verify.php'">VISIÓN</button>
-            <button class="button" data-number="6" aria-label="Cadena de valor" onclick="location.href='cadena_de_valor/cadena_de_valor.php'">CADENA DE VALOR</button>
+            <button class="button" data-number="6" aria-label="Cadena de valor" onclick="location.href='view/CadenaDeValor/verify.php'">CADENA DE VALOR</button>
             <button class="button" data-number="10" aria-label="Identificación estrategia" onclick="location.href='identificacion_estrategia/identificacion_estrategia.php'">IDENTIFICACIÓN ESTRATEGIA</button>
 
             <button class="button" data-number="3" aria-label="Valores" onclick="location.href='view/valores/verify.php'">VALORES</button>
