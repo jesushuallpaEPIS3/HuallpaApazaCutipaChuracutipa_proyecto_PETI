@@ -19,7 +19,7 @@
         </header>
         <main>
             <section class="info-box">
-                <table>
+                <table class="table table-bordered">
                     <tr>
                         <th>Mision</th>
                         <th>Objetivos Estratégicos</th>
