@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.27-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.32-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             12.8.0.6908
+-- HeidiSQL Versión:             12.6.0.6765
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -38,40 +38,43 @@ CREATE TABLE IF NOT EXISTS `mision` (
 
 -- Volcando datos para la tabla peti.mision: ~1 rows (aproximadamente)
 INSERT INTO `mision` (`id`, `mision`) VALUES
-	(445567, 'Nuestra misión es ser líderes en innovación sostenible, ofreciendo soluciones que integren la tecnología con el respeto por el medio ambiente, contribuyendo así a un futuro más limpio y sostenible para las próximas generaciones.\r\n\r\n');
+	(445567, 'En EcoSolutions, nos comprometemos a ofrecer soluciones sostenibles e innovadoras que promuevan un futuro más limpio y saludable. Nuestra misión es empoderar a las comunidades a través de productos ecológicos y servicios que reduzcan el impacto ambiental, fomenten la economía circular y mejoren la calidad de vida. Trabajamos con pasión y dedicación para inspirar un cambio positivo en el mundo, promoviendo la conciencia ambiental y la responsabilidad social.');
 
 -- Volcando estructura para tabla peti.objetivos
 CREATE TABLE IF NOT EXISTS `objetivos` (
   `id` int(11) DEFAULT NULL,
   `id_objetivo` int(11) DEFAULT NULL,
-  `descripcion` text DEFAULT NULL
+  `descripcionObj` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.objetivos: ~2 rows (aproximadamente)
-INSERT INTO `objetivos` (`id`, `id_objetivo`, `descripcion`) VALUES
+-- Volcando datos para la tabla peti.objetivos: ~3 rows (aproximadamente)
+INSERT INTO `objetivos` (`id`, `id_objetivo`, `descripcionObj`) VALUES
 	(445567, 1, 'objetivo1'),
-	(445567, 2, 'objetivo2');
+	(445567, 2, 'objetivo2'),
+	(445567, 3, 'objetivo3');
 
 -- Volcando estructura para tabla peti.obj_especificos
 CREATE TABLE IF NOT EXISTS `obj_especificos` (
   `id_objetivo` int(11) DEFAULT NULL,
-  `descripcion` text DEFAULT NULL
+  `descripcionEspObj` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.obj_especificos: ~4 rows (aproximadamente)
-INSERT INTO `obj_especificos` (`id_objetivo`, `descripcion`) VALUES
-	(1, 'objetivoespecifico1'),
-	(1, 'objetivoespecifico1'),
-	(2, 'objetivoespecifico2'),
-	(2, 'objetivoespecifico2');
+-- Volcando datos para la tabla peti.obj_especificos: ~6 rows (aproximadamente)
+INSERT INTO `obj_especificos` (`id_objetivo`, `descripcionEspObj`) VALUES
+	(1, 'objetivo1.1'),
+	(1, 'objetivo1.2'),
+	(2, 'objetivo2.1'),
+	(2, 'objetivo2.2'),
+	(3, 'objetivo3.1'),
+	(3, 'objetivo3.2');
 
 -- Volcando estructura para tabla peti.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL DEFAULT 0,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=445569 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Volcando datos para la tabla peti.usuario: ~1 rows (aproximadamente)
 INSERT INTO `usuario` (`id`, `username`, `password`) VALUES
@@ -97,7 +100,9 @@ CREATE TABLE IF NOT EXISTS `vision` (
   `vision` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.vision: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.vision: ~1 rows (aproximadamente)
+INSERT INTO `vision` (`id`, `vision`) VALUES
+	(445567, 'Ser líderes globales en la transformación hacia un futuro sostenible, donde cada persona y comunidad tenga acceso a soluciones ecológicas que preserven nuestro planeta. Aspiramos a inspirar un movimiento mundial hacia la conciencia ambiental y la innovación, convirtiéndonos en un referente de integridad y responsabilidad en la industria, mientras creamos un legado duradero de bienestar para las generaciones futuras.');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
