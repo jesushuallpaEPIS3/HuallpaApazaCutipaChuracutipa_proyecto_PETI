@@ -166,6 +166,7 @@
         <p>Gracias al Plan Empresarial, determinará la forma de lograr una ventaja competitiva para su proyecto de inversión.</p>
 
         <h2>INFORMACIÓN DE LA EMPRESA</h2>
+        <button class="button-large" aria-label="Informacion de la Empresa" onclick="location.href='informacion/informacion.php'">INFORMACION DE LA EMPRESA</button>
         <div class="button-container" role="group" aria-label="Opciones de información de la empresa">
             <button class="button" data-number="1" aria-label="Misión" onclick="location.href='mision/mision.php'">MISIÓN</button>
             <button class="button" data-number="5" aria-label="Análisis interno y externo" onclick="location.href='analisis_interno_externo/analisis_interno_externo.php'">ANÁLISIS INTERNO Y EXTERNO</button>
