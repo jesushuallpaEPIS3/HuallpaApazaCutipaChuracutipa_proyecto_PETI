@@ -6,6 +6,9 @@
             $this->model = new valoresModel();
         }
         public function guardar($id, $valores){
+            if(!$this->model->delete($id)){
+                header("Location:edit.php");
+            }
             foreach($valores as $valor){
                 if(!empty($valor)) {
                     $this->model->insertar($id, $valor);
