@@ -14,7 +14,7 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>Visión de tu Empresa</h1>
+            <h1>Valores</h1>
         </header>
         <main>
             <section class="info-box">

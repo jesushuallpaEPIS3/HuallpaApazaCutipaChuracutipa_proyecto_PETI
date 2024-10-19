@@ -2,10 +2,8 @@
     require_once("../head/header.php");
     require_once("../../controller/valoresController.php");
 
-    // Crear instancia del controlador
     $obj = new valoresController();
 
-    // Obtener los valores del usuario en la variable $date
     $date = $obj->show($_SESSION['user_id']);
 ?>
 <!DOCTYPE html>
@@ -27,7 +25,6 @@
                 <h2>Valores Ingresados:</h2>
                 <?php if (!empty($date)): ?>
                     <ul>
-                        <!-- Mostrar cada valor almacenado en la columna "valores" -->
                         <?php foreach ($date as $valor): ?>
                             <li><?= htmlspecialchars($valor['valores']) ?></li>
                         <?php endforeach; ?>
@@ -35,7 +32,7 @@
                 <?php else: ?>
                     <p>No se han ingresado valores aún.</p>
                 <?php endif; ?>
-                <a href="create.php" class="btn btn-secondary">Agregar más valores</a>
+                <a href="edit.php"><button>Modificar</button></a>
             </section>
         </main>
     </div>
