@@ -81,6 +81,46 @@
             </table>
 
             <br>
+            <div class>
+                <label>Reflexione sobre el resultado obtenido. Anote aquellas observaciones que puedan ser de su interés. Identifique sus fortalezas y debilidades respecto a su cadena de valor </label>
+                <input type="text" class="form-control" name="descripcion" required>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Fortalezas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>F1</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>F2</td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Debilidades</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>D1</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>D2</td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+
             <input type="submit" class="btn btn-primary" value="Enviar">
         </form>
 
