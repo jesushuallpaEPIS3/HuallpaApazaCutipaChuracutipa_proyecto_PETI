@@ -17,5 +17,8 @@
         public function verForm($id){
             return ($this->model->verForm($id)!=false) ? $this->model->verForm($id) : header("Location:create.php");
         }
+        public function comprobar($id){
+            return ($this->model->comprobar($id)) ? header("Location: show.php") : header("Location: create.php") ;
+        }
     }
 ?>

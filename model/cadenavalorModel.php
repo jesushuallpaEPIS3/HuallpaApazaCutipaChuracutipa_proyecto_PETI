@@ -23,5 +23,11 @@
             $query->bindParam(":id", $id);
             return $query->execute();
         }
+        public function comprobar($id){
+            $query = $this->PDO->prepare("SELECT * FROM cadenavalor where id = :id");
+            $query->bindParam(":id", $id);
+            $query->execute();
+            return $query->rowCount() > 0;
+        }
     }
 ?>
