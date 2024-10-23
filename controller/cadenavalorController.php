@@ -6,6 +6,7 @@
             $this->model = new cadenavalorModel();
         }
         public function guardar($id, $puntos){
+            $this->model->deleteForm($id);
             $i = 1;
             foreach($puntos as $punto){
                 $this->model->insertar($id, $i, $punto);

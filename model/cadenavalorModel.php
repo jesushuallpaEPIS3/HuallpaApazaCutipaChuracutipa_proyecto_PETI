@@ -18,5 +18,10 @@
             $query->bindParam(":id", $id);
             return ($query->execute()) ? $query->fetchAll() : false;    
         }
+        public function deleteForm($id){
+            $query = $this->PDO->prepare("DELETE FROM cadenavalor where id = :id");
+            $query->bindParam(":id", $id);
+            return $query->execute();
+        }
     }
 ?>
