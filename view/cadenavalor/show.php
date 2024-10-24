@@ -3,6 +3,7 @@
     require_once("../../controller/cadenavalorController.php");
     $obj = new cadenavalorController();
     $date = $obj->verForm($_SESSION['user_id']);
+    $foda = $obj->verfoda1($_SESSION['user_id']);
 ?>
 
     <title>Objetivos de tu Empresa</title>
@@ -85,6 +86,40 @@
             </table>
 
             <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Fortalezas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>F1</td>
+                        <td><input type="text" name="f1" value="<?= $foda['f1'] ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>F2</td>
+                        <td><input type="text" name="f2" value="<?= $foda['f2'] ?>" required></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Debilidades</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>D1</td>
+                        <td><input type="text" name="d1" value="<?= $foda['d1'] ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>D2</td>
+                        <td><input type="text" name="d2" value="<?= $foda['d2'] ?>" required></td>
+                    </tr>
+                </tbody>
+            </table>
             <input type="submit" class="btn btn-primary" value="Enviar">
         </form>
 

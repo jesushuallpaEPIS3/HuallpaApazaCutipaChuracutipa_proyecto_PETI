@@ -83,8 +83,10 @@
             <br>
             <div class>
                 <label>Reflexione sobre el resultado obtenido. Anote aquellas observaciones que puedan ser de su interés. Identifique sus fortalezas y debilidades respecto a su cadena de valor </label>
-                <input type="text" class="form-control" name="descripcion" required>
+                <input type="text" class="form-control" name="descripcion">
             </div>
+                                    
+            <!-- FODA -->
 
             <table>
                 <thead>
@@ -95,11 +97,11 @@
                 <tbody>
                     <tr>
                         <td>F1</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="f1" required></td>
                     </tr>
                     <tr>
                         <td>F2</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="f2" required></td>
                     </tr>
                 </tbody>
             </table>
@@ -112,11 +114,11 @@
                 <tbody>
                     <tr>
                         <td>D1</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="d1" required></td>
                     </tr>
                     <tr>
                         <td>D2</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="d2" required></td>
                     </tr>
                 </tbody>
             </table>
