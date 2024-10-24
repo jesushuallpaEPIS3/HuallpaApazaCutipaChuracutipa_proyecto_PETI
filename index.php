@@ -189,13 +189,13 @@
             <button class="button" data-number="2" onclick="location.href='view/vision/verify.php'">Visión</button>
             <button class="button" data-number="3" onclick="location.href='view/valores/verify.php'">Valores</button>
             <button class="button" data-number="4" onclick="location.href='view/objetivos/verify.php'">Objetivos</button>
-            <button class="button" data-number="5" onclick="location.href='analisis_interno_externo/analisis_interno_externo.php'">Análisis Interno y Externo</button>
-            <button class="button" data-number="6" onclick="location.href='cadena_de_valor/cadena_de_valor.php'">Cadena de Valor</button>
-            <button class="button" data-number="7" onclick="location.href='matriz_participacion/matriz_participacion.php'">Matriz de Participación</button>
-            <button class="button" data-number="8" onclick="location.href='las_5_fuerzas/las_5_fuerzas.php'">5 Fuerzas de Porter</button>
+            <button class="button" data-number="5" onclick="location.href='#'">Análisis Interno y Externo</button>
+            <button class="button" data-number="6" onclick="location.href='view/cadenavalor/verify.php'">Cadena de Valor</button>
+            <button class="button" data-number="7" onclick="location.href='#'">Matriz de Participación</button>
+            <!-- <button class="button" data-number="8" onclick="location.href='las_5_fuerzas/las_5_fuerzas.php'">5 Fuerzas de Porter</button>
             <button class="button" data-number="9" onclick="location.href='pest/pest.php'">Análisis PEST</button>
             <button class="button" data-number="10" onclick="location.href='identificacion_estrategia/identificacion_estrategia.php'">Identificación de Estrategia</button>
-            <button class="button" data-number="11" onclick="location.href='matriz_came/matriz_came.php'">Matriz CAME</button>
+            <button class="button" data-number="11" onclick="location.href='matriz_came/matriz_came.php'">Matriz CAME</button> -->
         </div>
     </div>
 </body>
