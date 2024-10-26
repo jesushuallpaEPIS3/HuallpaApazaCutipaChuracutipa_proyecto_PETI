@@ -30,27 +30,27 @@
                     <th>% S/ TOTAL</th>
                 </tr>
                 <tr>
-                    <td>Producto 1</td>
+                    <td><input type="text" name="" required value="Producto 1"></td>
                     <td><input type="text" name="" required></td>
                     <td>#</td>
                 </tr>
                 <tr>
-                    <td>Producto 2</td>
+                    <td><input type="text" name="" required value="Producto 2"></td>
                     <td><input type="text" name="" required></td>
                     <td>#</td>
                 </tr>
                 <tr>
-                    <td>Producto 3</td>
+                    <td><input type="text" name="" required value="Producto 3"></td>
                     <td><input type="text" name="" required></td>
                     <td>#</td>
                 </tr>
                 <tr>
-                    <td>Producto 4</td>
+                    <td><input type="text" name="" required value="Producto 4"></td>
                     <td><input type="text" name="" required></td>
                     <td>#</td>
                 </tr>
                 <tr>
-                    <td>Producto 5</td>
+                    <td><input type="text" name="" required value="Producto 5"></td>
                     <td><input type="text" name="" required></td>
                     <td>#</td>
                 </tr>
