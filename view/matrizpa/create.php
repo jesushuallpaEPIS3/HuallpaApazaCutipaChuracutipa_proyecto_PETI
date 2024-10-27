@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../head/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head> -->
+<script src="script.js" defer></script>
+
 <body>
     <div class="wrapper">
         <header>
@@ -20,6 +22,7 @@
 
             <!-- <form method="post" action="store.php"> -->
             
+            <!-- PREVISIÓN DE VENTAS -->
             <table border="1">
                 <tr>
                     <th colspan="3">PREVISIÓN DE VENTAS</th>
@@ -30,37 +33,38 @@
                     <th>% S/ TOTAL</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="" required value="Producto 1"></td>
-                    <td><input type="text" name="" required></td>
-                    <td>#</td>
+                    <td><input type="text" name="producto" value="Producto 1" oninput="actualizarPorcentajes()"></td>
+                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="" required value="Producto 2"></td>
-                    <td><input type="text" name="" required></td>
-                    <td>#</td>
+                    <td><input type="text" name="producto" value="Producto 2" oninput="actualizarPorcentajes()"></td>
+                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="" required value="Producto 3"></td>
-                    <td><input type="text" name="" required></td>
-                    <td>#</td>
+                    <td><input type="text" name="producto" value="Producto 3" oninput="actualizarPorcentajes()"></td>
+                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="" required value="Producto 4"></td>
-                    <td><input type="text" name="" required></td>
-                    <td>#</td>
+                    <td><input type="text" name="producto" value="Producto 4" oninput="actualizarPorcentajes()"></td>
+                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="" required value="Producto 5"></td>
-                    <td><input type="text" name="" required></td>
-                    <td>#</td>
+                    <td><input type="text" name="producto" value="Producto 5" oninput="actualizarPorcentajes()"></td>
+                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td>TOTAL</td>
-                    <td>0</td>
-                    <td>0.00%</td>
+                    <td><strong>TOTAL</strong></td>
+                    <td id="totalVentas">0</td>
+                    <td id="totalPorcentaje">100.00%</td>
                 </tr>
             </table>
 
+            <!-- TASAS DE CRECIMIENTO DEL MERCADO (TCM) -->
             <table border="1">
                 <tr><th colspan="7">TASAS DE CRECIMIENTO DEL MERCADO (TCM)</th></tr>
                 <tr>
@@ -68,70 +72,70 @@
                     <th colspan="5">MERCADOS</th>
                 </tr>
                 <tr>
-                    <th>PRODUCTO 1</th>
-                    <th>PRODUCTO 2</th>
-                    <th>PRODUCTO 3</th>
-                    <th>PRODUCTO 4</th>
-                    <th>PRODUCTO 5</th>
-                </tr>
-                <tr>
-                    <td>2019</td><td>2020</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <th name="nameproducto">Producto 1</th>
+                    <th name="nameproducto">Producto 2</th>
+                    <th name="nameproducto">Producto 3</th>
+                    <th name="nameproducto">Producto 4</th>
+                    <th name="nameproducto">Producto 5</th>
                 </tr>
                 <tr>
                     <td>2020</td><td>2021</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="producto1" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto2" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto3" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto4" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto5" required oninput="mostarSimboloPorcentaje()"></td>
                 </tr>
                 <tr>
                     <td>2021</td><td>2022</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="producto1" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto2" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto3" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto4" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto5" required oninput="mostarSimboloPorcentaje()"></td>
                 </tr>
                 <tr>
-                    <td>2022</td><td>2023</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td>2023</td><td>2023</td>
+                    <td><input type="text" name="producto1" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto2" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto3" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto4" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto5" required oninput="mostarSimboloPorcentaje()"></td>
                 </tr>
                 <tr>
                     <td>2023</td><td>2024</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="producto1" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto2" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto3" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto4" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto5" required oninput="mostarSimboloPorcentaje()"></td>
+                </tr>
+                <tr>
+                    <td>2024</td><td>2024</td>
+                    <td><input type="text" name="producto1" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto2" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto3" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto4" required oninput="mostarSimboloPorcentaje()"></td>
+                    <td><input type="text" name="producto5" required oninput="mostarSimboloPorcentaje()"></td>
                 </tr>
             </table>
-
+            <!-- BCG -->
             <table border="1">
                 <tr>
                     <th>BCG</th>
-                    <th>Producto 1</th>
-                    <th>Producto 2</th>
-                    <th>Producto 3</th>
-                    <th>Producto 4</th>
-                    <th>Producto 5</th>
+                    <th name="nameproducto">Producto 1</th>
+                    <th name="nameproducto">Producto 2</th>
+                    <th name="nameproducto">Producto 3</th>
+                    <th name="nameproducto">Producto 4</th>
+                    <th name="nameproducto">Producto 5</th>
                 </tr>
                 <tr>
                     <td>TCM</td>
-                    <td>0.00%</td>
-                    <td>0.00%</td>
-                    <td>0.00%</td>
-                    <td>0.00%</td>
-                    <td>0.00%</td>
+                    <td name="tcm">0.00%</td>
+                    <td name="tcm">0.00%</td>
+                    <td name="tcm">0.00%</td>
+                    <td name="tcm">0.00%</td>
+                    <td name="tcm">0.00%</td>
                 </tr>
                 <tr>
                     <td>PRM</td>
@@ -158,11 +162,11 @@
                     <th colspan="5">MERCADOS</th>
                 </tr>
                 <tr>
-                    <th>Producto 1</th>
-                    <th>Producto 2</th>
-                    <th>Producto 3</th>
-                    <th>Producto 4</th>
-                    <th>Producto 5</th>
+                    <th name="nameproducto">Producto 1</th>
+                    <th name="nameproducto">Producto 2</th>
+                    <th name="nameproducto">Producto 3</th>
+                    <th name="nameproducto">Producto 4</th>
+                    <th name="nameproducto">Producto 5</th>
                 </tr>
                 <tr>
                     <td>2019</td>
@@ -217,11 +221,11 @@
             <table border="1">
                 <tr><th colspan="10">NIVELES DE VENTA DE LOS COMPETIDORES DE CADA PRODUCTO</th></tr>
                 <tr>
-                    <th colspan="2">Producto 1</th>
-                    <th colspan="2">Producto 2</th>
-                    <th colspan="2">Producto 3</th>
-                    <th colspan="2">Producto 4</th>
-                    <th colspan="2">Producto 5</th>
+                    <th colspan="2" name="nameproducto">Producto 1</th>
+                    <th colspan="2" name="nameproducto">Producto 2</th>
+                    <th colspan="2" name="nameproducto">Producto 3</th>
+                    <th colspan="2" name="nameproducto">Producto 4</th>
+                    <th colspan="2" name="nameproducto">Producto 5</th>
                 </tr>
                 <tr>
                     <th>EMPRESA</th>
