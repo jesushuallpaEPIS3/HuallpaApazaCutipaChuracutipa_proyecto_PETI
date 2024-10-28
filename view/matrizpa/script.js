@@ -55,9 +55,17 @@ function mostarSimboloPorcentaje(){
     }
 }
 
-function TCM(){
-    tcm = document.getElementsByName=("tcm");
-    for(let i = 0; i<tcm.length; i++){
 
+function simboloPorcentaje(){
+    for (let i = 1; i <= 5; i++) {
+        let anoproducto = "anoproducto" + i;
+        anoproducto = document.getElementsByName(anoproducto);
+        for (let j = 0; j < anoproducto.length; j++) {
+            if(anoproducto[j].value != ""){
+                const soloNumeros = anoproducto[j].value.replace(/[^0-9.]/g, '');
+                console.log(soloNumeros);
+                anoproducto[j].value = soloNumeros ? soloNumeros + "%" : "";
+            }
+        }
     }
 }

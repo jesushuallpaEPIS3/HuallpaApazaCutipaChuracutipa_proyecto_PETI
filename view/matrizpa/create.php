@@ -155,7 +155,7 @@
                 </tr>
             </table>
 
-            <table border="1">
+            <table border="1" oninput="simboloPorcentaje()">
                 <tr><th colspan="6">EVOLUCION DE LA DEMANDA GLOBAL SECTOR (en miles de soles)</th></tr>
                 <tr>
                     <th rowspan="2">AÑOS</th>
@@ -170,51 +170,51 @@
                 </tr>
                 <tr>
                     <td>2019</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="anoproducto1" required ></td>
+                    <td><input type="text" name="anoproducto2" required></td>
+                    <td><input type="text" name="anoproducto3" required></td>
+                    <td><input type="text" name="anoproducto4" required></td>
+                    <td><input type="text" name="anoproducto5" required></td>
                 </tr>
                 <tr>
                     <td>2020</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="anoproducto1" required></td>
+                    <td><input type="text" name="anoproducto2" required></td>
+                    <td><input type="text" name="anoproducto3" required></td>
+                    <td><input type="text" name="anoproducto4" required></td>
+                    <td><input type="text" name="anoproducto5" required></td>
                 </tr>
                 <tr>
                     <td>2021</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="anoproducto1" required></td>
+                    <td><input type="text" name="anoproducto2" required></td>
+                    <td><input type="text" name="anoproducto3" required></td>
+                    <td><input type="text" name="anoproducto4" required></td>
+                    <td><input type="text" name="anoproducto5" required></td>
                 </tr>
                 <tr>
                     <td>2022</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="anoproducto1" required></td>
+                    <td><input type="text" name="anoproducto2" required></td>
+                    <td><input type="text" name="anoproducto3" required></td>
+                    <td><input type="text" name="anoproducto4" required></td>
+                    <td><input type="text" name="anoproducto5" required></td>
                 </tr>
                 <tr>
                     <td>2023</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="anoproducto1" required></td>
+                    <td><input type="text" name="anoproducto2" required></td>
+                    <td><input type="text" name="anoproducto3" required></td>
+                    <td><input type="text" name="anoproducto4" required></td>
+                    <td><input type="text" name="anoproducto5" required></td>
                 </tr>
                 <tr>
                     <td>2024</td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="anoproducto1" required></td>
+                    <td><input type="text" name="anoproducto2" required></td>
+                    <td><input type="text" name="anoproducto3" required></td>
+                    <td><input type="text" name="anoproducto4" required></td>
+                    <td><input type="text" name="anoproducto5" required></td>
                 </tr>
             </table>
 
