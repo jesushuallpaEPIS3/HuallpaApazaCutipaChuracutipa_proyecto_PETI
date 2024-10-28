@@ -4,12 +4,14 @@ function actualizarPorcentajes() {
     const porcentajes = document.getElementsByName("porcentaje");
     const producto = document.getElementsByName("producto");
     const nameproducto = document.getElementsByName("nameproducto");
+    const ventasproduc = document.getElementsByName("ventasproduc");
 
     let totalVentas = 0;
 
     // Calcular el total de ventas
     for (let i = 0; i < ventas.length; i++) {
         totalVentas += parseFloat(ventas[i].value) || 0;
+        ventasproduc[i].innerText = ventas[i].value;
     }
     // Cambiar nombres a productos
     for (let i = 0; i < producto.length; i++) {

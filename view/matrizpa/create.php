@@ -229,15 +229,15 @@
                 </tr>
                 <tr>
                     <th>EMPRESA</th>
-                    <th></th>
+                    <th name="ventasproduc"></th>
                     <th>EMPRESA</th>
-                    <th></th>
+                    <th name="ventasproduc"></th>
                     <th>EMPRESA</th>
-                    <th></th>
+                    <th name="ventasproduc"></th>
                     <th>EMPRESA</th>
-                    <th></th>
+                    <th name="ventasproduc"></th>
                     <th>EMPRESA</th>
-                    <th></th>
+                    <th name="ventasproduc"></th>
                 </tr>
                 <tr>
                     <td>Competidor</td>
