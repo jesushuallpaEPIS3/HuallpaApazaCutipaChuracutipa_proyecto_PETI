@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.27-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.32-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             12.8.0.6908
+-- HeidiSQL Versión:             12.6.0.6765
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -26,33 +26,50 @@ CREATE TABLE IF NOT EXISTS `cadenavalor` (
   `punto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.cadenavalor: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.cadenavalor: ~25 rows (aproximadamente)
 INSERT INTO `cadenavalor` (`id`, `enunciado`, `punto`) VALUES
 	(445567, 1, 2),
 	(445567, 2, 2),
-	(445567, 3, 3),
+	(445567, 3, 4),
 	(445567, 4, 2),
-	(445567, 5, 2),
-	(445567, 6, 2),
-	(445567, 7, 2),
-	(445567, 8, 2),
-	(445567, 9, 2),
-	(445567, 10, 4),
-	(445567, 11, 2),
-	(445567, 12, 3),
+	(445567, 5, 4),
+	(445567, 6, 3),
+	(445567, 7, 4),
+	(445567, 8, 5),
+	(445567, 9, 5),
+	(445567, 10, 1),
+	(445567, 11, 1),
+	(445567, 12, 1),
 	(445567, 13, 2),
 	(445567, 14, 2),
 	(445567, 15, 2),
 	(445567, 16, 2),
-	(445567, 17, 2),
+	(445567, 17, 3),
 	(445567, 18, 2),
-	(445567, 19, 3),
-	(445567, 20, 2),
-	(445567, 21, 2),
-	(445567, 22, 2),
-	(445567, 23, 2),
-	(445567, 24, 2),
-	(445567, 25, 5);
+	(445567, 19, 4),
+	(445567, 20, 4),
+	(445567, 21, 4),
+	(445567, 22, 3),
+	(445567, 23, 5),
+	(445567, 24, 5),
+	(445567, 25, 4);
+
+-- Volcando estructura para tabla peti.foda
+CREATE TABLE IF NOT EXISTS `foda` (
+  `id` int(11) DEFAULT NULL,
+  `f1` text DEFAULT NULL,
+  `f2` text DEFAULT NULL,
+  `f3` text DEFAULT NULL,
+  `f4` text DEFAULT NULL,
+  `d1` text DEFAULT NULL,
+  `d2` text DEFAULT NULL,
+  `d3` text DEFAULT NULL,
+  `d4` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Volcando datos para la tabla peti.foda: ~1 rows (aproximadamente)
+INSERT INTO `foda` (`id`, `f1`, `f2`, `f3`, `f4`, `d1`, `d2`, `d3`, `d4`) VALUES
+	(445567, 'Fortaleza 1', 'Fortaleza 2', NULL, NULL, 'Debilidad 1', 'Debilidad 2', NULL, NULL);
 
 -- Volcando estructura para tabla peti.informacion
 CREATE TABLE IF NOT EXISTS `informacion` (
@@ -71,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `mision` (
   `mision` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.mision: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.mision: ~1 rows (aproximadamente)
 INSERT INTO `mision` (`id`, `mision`) VALUES
 	(445567, 'En EcoSolutions, nos comprometemos a ofrecer soluciones sostenibles e innovadoras que promuevan un futuro más limpio y saludable. Nuestra misión es empoderar a las comunidades a través de productos ecológicos y servicios que reduzcan el impacto ambiental, fomenten la economía circular y mejoren la calidad de vida. Trabajamos con pasión y dedicación para inspirar un cambio positivo en el mundo, promoviendo la conciencia ambiental y la responsabilidad social.');
 
@@ -105,16 +122,15 @@ INSERT INTO `obj_especificos` (`id_objetivo`, `descripcionEspObj`) VALUES
 
 -- Volcando estructura para tabla peti.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL DEFAULT 0,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=445569 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.usuario: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.usuario: ~1 rows (aproximadamente)
 INSERT INTO `usuario` (`id`, `username`, `password`) VALUES
-	(445567, 'user123', '123'),
-	(445568, '123', '123');
+	(445567, 'user123', '123');
 
 -- Volcando estructura para tabla peti.valores
 CREATE TABLE IF NOT EXISTS `valores` (
@@ -122,7 +138,13 @@ CREATE TABLE IF NOT EXISTS `valores` (
   `valores` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.valores: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.valores: ~5 rows (aproximadamente)
+INSERT INTO `valores` (`id`, `valores`) VALUES
+	(445567, 'Sostenibilidad: Comprometidos con la protección del medio ambiente en cada decisión que tomamos.'),
+	(445567, 'Innovación: Fomentamos la creatividad y la búsqueda constante de nuevas soluciones que mejoren la calidad de vida.'),
+	(445567, 'Integridad: Actuamos con transparencia y honestidad en todas nuestras interacciones.'),
+	(445567, 'Colaboración: Trabajamos en equipo y valoramos las ideas de nuestros empleados, clientes y socios.'),
+	(445567, 'Responsabilidad Social: Nos involucramos en la comunidad y apoyamos iniciativas que beneficien a la sociedad.');
 
 -- Volcando estructura para tabla peti.vision
 CREATE TABLE IF NOT EXISTS `vision` (
@@ -130,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `vision` (
   `vision` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.vision: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.vision: ~1 rows (aproximadamente)
 INSERT INTO `vision` (`id`, `vision`) VALUES
 	(445567, 'Ser líderes globales en la transformación hacia un futuro sostenible, donde cada persona y comunidad tenga acceso a soluciones ecológicas que preserven nuestro planeta. Aspiramos a inspirar un movimiento mundial hacia la conciencia ambiental y la innovación, convirtiéndonos en un referente de integridad y responsabilidad en la industria, mientras creamos un legado duradero de bienestar para las generaciones futuras.');
 
