@@ -23,7 +23,7 @@
             <!-- <form method="post" action="store.php"> -->
             
             <!-- PREVISIÓN DE VENTAS -->
-            <table border="1">
+            <table border="1" oninput="actualizarTbPrivisionVentas(); maxVentaCp()">
                 <tr>
                     <th colspan="3">PREVISIÓN DE VENTAS</th>
                 </tr>
@@ -33,28 +33,28 @@
                     <th>% S/ TOTAL</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="producto" value="Producto 1" oninput="actualizarPorcentajes()"></td>
-                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td><input type="text" name="producto" value="Producto 1"></td>
+                    <td><input type="number" name="ventas" placeholder="0"></td>
                     <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="producto" value="Producto 2" oninput="actualizarPorcentajes()"></td>
-                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td><input type="text" name="producto" value="Producto 2"></td>
+                    <td><input type="number" name="ventas" placeholder="0"></td>
                     <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="producto" value="Producto 3" oninput="actualizarPorcentajes()"></td>
-                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td><input type="text" name="producto" value="Producto 3"></td>
+                    <td><input type="number" name="ventas" placeholder="0"></td>
                     <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="producto" value="Producto 4" oninput="actualizarPorcentajes()"></td>
-                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td><input type="text" name="producto" value="Producto 4"></td>
+                    <td><input type="number" name="ventas" placeholder="0"></td>
                     <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="producto" value="Producto 5" oninput="actualizarPorcentajes()"></td>
-                    <td><input type="number" name="ventas" oninput="actualizarPorcentajes()" placeholder="0"></td>
+                    <td><input type="text" name="producto" value="Producto 5"></td>
+                    <td><input type="number" name="ventas" placeholder="0"></td>
                     <td name="porcentaje">0.00%</td>
                 </tr>
                 <tr>
@@ -139,19 +139,19 @@
                 </tr>
                 <tr>
                     <td>PRM</td>
-                    <td>0.00</td>
-                    <td>0.00</td>
-                    <td>0.00</td>
-                    <td>0.00</td>
-                    <td>0.00</td>
+                    <td name="prm">0.00</td>
+                    <td name="prm">0.00</td>
+                    <td name="prm">0.00</td>
+                    <td name="prm">0.00</td>
+                    <td name="prm">0.00</td>
                 </tr>
                 <tr>
                     <td>% S/VTAS</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td name="bcgventas"></td>
+                    <td name="bcgventas"></td>
+                    <td name="bcgventas"></td>
+                    <td name="bcgventas"></td>
+                    <td name="bcgventas"></td>
                 </tr>
             </table>
 
@@ -218,7 +218,7 @@
                 </tr>
             </table>
 
-            <table border="1">
+            <table border="1" oninput="maxVentaCp()">
                 <tr><th colspan="10">NIVELES DE VENTA DE LOS COMPETIDORES DE CADA PRODUCTO</th></tr>
                 <tr>
                     <th colspan="2" name="nameproducto">Producto 1</th>
@@ -253,123 +253,123 @@
                 </tr>
                 <tr>
                     <td>CP1-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>CP1-2</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-2</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-2</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-2</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>CP1-3</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-3</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-3</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-3</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>CP1-4</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-4</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-4</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-4</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>CP1-5</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-5</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-5</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-5</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>CP1-6</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-6</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-6</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-6</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>CP1-7</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-7</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-7</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-7</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>CP1-8</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-8</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-8</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-8</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>CP1-9</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto1" required></td>
                     <td>CP2-9</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto2" required></td>
                     <td>CP2-9</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto3" required></td>
                     <td>CP2-9</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto4" required></td>
                     <td>CP3-1</td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="cpproducto5" required></td>
                 </tr>
                 <tr>
                     <td>Mayor</td>
-                    <td>0</td>
+                    <td name="mayorcpproducto1">0</td>
                     <td>Mayor</td>
-                    <td>0</td>
+                    <td name="mayorcpproducto2">0</td>
                     <td>Mayor</td>
-                    <td>0</td>
+                    <td name="mayorcpproducto3">0</td>
                     <td>Mayor</td>
-                    <td>0</td>
+                    <td name="mayorcpproducto4">0</td>
                     <td>Mayor</td>
-                    <td>0</td>
+                    <td name="mayorcpproducto5">0</td>
                 </tr>
             </table>
 
