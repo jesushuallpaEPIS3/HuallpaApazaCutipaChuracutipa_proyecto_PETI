@@ -1,104 +1,225 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Proyecto PETI</title>
-    <?php require_once("../sesion/seguridad.php");?>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <?php require_once("../sesion/seguridad.php"); ?>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-      .bg-gradient-navbar {
-        background: linear-gradient(to right, #2563eb, #1d4ed8);
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            width: 280px;
+            background-color: #005f5f;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-header {
+            padding: 1.5rem;
+            background-color: #004c4c;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-title:hover {
+            color: #e6f3f3;
+        }
+
+        .nav-content {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.375rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            background-color: #007373;
+        }
+
+        .nav-link.active {
+            background-color: #e6f3f3;
+            color: #005f5f;
+        }
+
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 2rem;
+            background-color: #00e6e6;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .nav-link i {
+            width: 1.5rem;
+            text-align: center;
+            margin-right: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .nav-link .icon-right {
+            margin-left: auto;
+            font-size: 0.875rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover .icon-right {
+            transform: translateX(4px);
+        }
+
+        .nav-footer {
+            padding: 1rem;
+            background-color: #004c4c;
+            margin-top: auto;
+        }
+
+        .logout-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .logout-link:hover {
+            background-color: #003939;
+        }
+
+        .logout-link i.fa-sign-out-alt {
+            color: #ff6b6b;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
     </style>
-  </head>
-  <body class="bg-gray-100">
-    <nav class="bg-gradient-navbar shadow-lg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <div class="flex items-center">
-            <a href="../../" class="flex-shrink-0">
-              <i data-lucide="home" class="h-8 w-8 text-white"></i>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-header">
+            <a href="../../" class="nav-title">
+                <i class="fas fa-th-large"></i>
+                Home
             </a>
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-4">
-                <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center">
-                  <i data-lucide="info" class="h-4 w-4 mr-1"></i>
-                  Información
-                </a>
-                <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center">
-                  <i data-lucide="target" class="h-4 w-4 mr-1"></i>
-                  Misión
-                </a>
-                <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center">
-                  <i data-lucide="star" class="h-4 w-4 mr-1"></i>
-                  Visión
-                </a>
-                <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center">
-                  <i data-lucide="flag" class="h-4 w-4 mr-1"></i>
-                  Valores
-                </a>
-                <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center">
-                  <i data-lucide="target" class="h-4 w-4 mr-1"></i>
-                  Objetivos
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="hidden md:block">
-            <a href="../sesion/salir.php" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-150 ease-in-out transform hover:scale-105">
-              Cerrar Sesión
-            </a>
-          </div>
-          <div class="-mr-2 flex md:hidden">
-            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-              <span class="sr-only">Abrir menú principal</span>
-              <i data-lucide="menu" class="block h-6 w-6"></i>
-              <i data-lucide="x" class="hidden h-6 w-6"></i>
-            </button>
-          </div>
         </div>
-      </div>
 
-      <div class="md:hidden" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Información</a>
-          <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Misión</a>
-          <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Visión</a>
-          <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Valores</a>
-          <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Objetivos</a>
+        <div class="nav-content">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="../informacion/verify.php" class="nav-link">
+                    <i class="fas fa-building"></i>
+                    Información de la Empresa
+                    <i class="fas fa-chevron-right icon-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../mision/verify.php" class="nav-link">
+                    <i class="fas fa-bullseye"></i>
+                    Misión
+                    <i class="fas fa-chevron-right icon-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../vision/verify.php" class="nav-link">
+                    <i class="fas fa-eye"></i>
+                    Visión
+                    <i class="fas fa-chevron-right icon-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../valores/verify.php" class="nav-link">
+                    <i class="fas fa-heart"></i>
+                    Valores
+                    <i class="fas fa-chevron-right icon-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../objetivos/verify.php" class="nav-link">
+                    <i class="fas fa-flag"></i>
+                    Objetivos
+                    <i class="fas fa-chevron-right icon-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Análisis Interno y Externo
+                    <i class="fas fa-chevron-right icon-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../cadenavalor/verify.php" class="nav-link">
+                    <i class="fas fa-link"></i>
+                    Cadena de Valor
+                    <i class="fas fa-chevron-right icon-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-th"></i>
+                    Matriz de Participación
+                    <i class="fas fa-chevron-right icon-right"></i>
+                </a>
+            </li>
+        </ul>
+
         </div>
-        <div class="pt-4 pb-3 border-t border-blue-700">
-          <div class="flex items-center px-5">
-            <a href="../sesion/salir.php" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-150 ease-in-out transform hover:scale-105 text-center">
-              Cerrar Sesión
+
+        <div class="nav-footer">
+            <a href="../sesion/salir.php" class="logout-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <span style="margin-left: 0.75rem;">Cerrar Sesión</span>
+                <i class="fas fa-chevron-right icon-right"></i>
             </a>
-          </div>
         </div>
-      </div>
     </nav>
-
-    <div class="container mx-auto mt-4">
-      <!-- Contenido de la página aquí -->
-    </div>
-
-    <script>
-      lucide.createIcons();
-      
-      // Toggle mobile menu
-      const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const menuIcon = mobileMenuButton.querySelector('[data-lucide="menu"]');
-      const closeIcon = mobileMenuButton.querySelector('[data-lucide="x"]');
-
-      mobileMenuButton.addEventListener('click', () => {
-        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
-        mobileMenuButton.setAttribute('aria-expanded', !expanded);
-        mobileMenu.classList.toggle('hidden');
-        menuIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-      });
-    </script>
-  </body>
+</body>
 </html>
