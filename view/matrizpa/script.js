@@ -43,7 +43,7 @@ function mostarSimboloPorcentaje(){
                 const soloNumeros = producto[j].value.replace(/[^0-9.]/g, '');
                 producto[j].value = soloNumeros ? soloNumeros + "%" : "";
             }
-            console.log(producto[j].value.replace('%', ''));
+            // console.log(producto[j].value.replace('%', ''));
         }
 
         tcm[i-1].innerText = (suma/5 < 20) ? suma/5 + "%" : "20%";
@@ -69,8 +69,8 @@ function maxVentaCp(){
     let max;
     let prm = document.getElementsByName("prm");
     const ventas = document.getElementsByName("ventas");
-    console.log("VENTAS");
-    console.log(ventas[0].value);
+    // console.log("VENTAS");
+    // console.log(ventas[0].value);
 
     for (let i = 1; i <= 5; i++) {
         let cpproducto = "cpproducto" + i;
@@ -87,8 +87,8 @@ function maxVentaCp(){
         mayorcpproducto[0].innerText = max;
 
         ventasNum = parseFloat(ventas[i-1].value);
-        console.log("VENTAS NUMERO");
-        console.log(ventasNum);
+        // console.log("VENTAS NUMERO");
+        // console.log(ventasNum);
 
         if(mayorcpproducto[0].innerText != '0'){
             if(ventasNum / max > 2){
@@ -97,3 +97,78 @@ function maxVentaCp(){
         } else prm[i-1].innerText = 0.00;
     }
 }
+function generarMatrizBCG() {
+    function obtenerDatosTabla() {
+      const productos = [];
+      
+      const nombres = document.querySelectorAll("[name='producto']");
+      
+      const tcmValores = document.querySelectorAll("[name='tcm']");
+      const prmValores = document.querySelectorAll("[name='prm']");
+      
+      nombres.forEach((nombre, i) => {
+        const tcm = parseFloat(tcmValores[i].innerText.replace('%', ''));
+        
+        const prm = parseFloat(prmValores[i].innerText);
+        
+        productos.push({
+          nombre: nombre.value,
+          tcm: tcm,
+          prm: prm
+        });
+      });
+      
+      return productos;
+    }
+  
+    const width = 600;
+    const height = 600;
+    const halfWidth = width / 2;
+    const halfHeight = height / 2;
+    const bolitaSize = 90;
+  
+    document.querySelectorAll(".product").forEach((bolita) => bolita.remove());
+  
+    const colores = ["#FF6B6B", "#4ECDC4", "#FFD93D", "#1A535C", "#FF6F61"];
+  
+    const productos = obtenerDatosTabla();
+    
+    productos.forEach((producto, index) => {
+      const bolita = document.createElement("div");
+      bolita.className = "product";
+      bolita.title = producto.nombre;
+      bolita.textContent = producto.nombre;
+  
+      bolita.style.width = `${bolitaSize}px`;
+      bolita.style.height = `${bolitaSize}px`;
+      bolita.style.fontSize = "0.9rem";
+      bolita.style.lineHeight = "1.2rem";
+      bolita.style.display = "flex";
+      bolita.style.alignItems = "center";
+      bolita.style.justifyContent = "center";
+  
+      bolita.style.backgroundColor = colores[index % colores.length];
+  
+      let x = (producto.prm / 2) * halfWidth;
+      let y = (1 - (producto.tcm / 20)) * halfHeight;
+  
+      x = Math.min(Math.max(x, bolitaSize / 2), halfWidth - bolitaSize / 2); 
+      y = Math.min(Math.max(y, bolitaSize / 2), halfHeight - bolitaSize / 2); 
+  
+      if (producto.tcm > 10 && producto.prm > 1) {
+        bolita.style.left = `${halfWidth + x - bolitaSize / 2}px`;
+        bolita.style.top = `${y - bolitaSize / 2}px`;
+      } else if (producto.tcm > 10 && producto.prm <= 1) {
+        bolita.style.left = `${x - bolitaSize / 2}px`;
+        bolita.style.top = `${y - bolitaSize / 2}px`;
+      } else if (producto.tcm <= 10 && producto.prm > 1) {
+        bolita.style.left = `${halfWidth + x - bolitaSize / 2}px`;
+        bolita.style.top = `${halfHeight + y - bolitaSize / 2}px`;
+      } else {
+        bolita.style.left = `${x - bolitaSize / 2}px`;
+        bolita.style.top = `${halfHeight + y - bolitaSize / 2}px`;
+      }
+  
+      document.querySelector(".bcg-container").appendChild(bolita);
+    });
+  }

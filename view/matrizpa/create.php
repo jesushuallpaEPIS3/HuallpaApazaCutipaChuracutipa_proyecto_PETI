@@ -1,15 +1,15 @@
 <?php
-    //require_once("../head/header.php");
+    require_once("../head/header.php");
 ?>
 
-    <!-- <title>MATRIZ PARTICIPACION</title>
+    <title>MATRIZ PARTICIPACION</title>
     <link rel="stylesheet" href="../head/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-</head> -->
+</head>
 <script src="script.js" defer></script>
-
+<link rel="stylesheet" href="grafico.css">
 <body>
-    <div class="wrapper">
+    <div class="wrapper" oninput="generarMatrizBCG()">
         <header>
             <h1>MATRIZ PARTICIPACION</h1>
         </header>
@@ -23,7 +23,7 @@
             <!-- <form method="post" action="store.php"> -->
             
             <!-- PREVISIÓN DE VENTAS -->
-            <table border="1" oninput="actualizarTbPrivisionVentas(); maxVentaCp()">
+            <table border="1" oninput="actualizarTbPrivisionVentas(); maxVentaCp();">
                 <tr>
                     <th colspan="3">PREVISIÓN DE VENTAS</th>
                 </tr>
@@ -65,7 +65,7 @@
             </table>
 
             <!-- TASAS DE CRECIMIENTO DEL MERCADO (TCM) -->
-            <table border="1">
+            <table border="1" oninput="graficoBCG()">
                 <tr><th colspan="7">TASAS DE CRECIMIENTO DEL MERCADO (TCM)</th></tr>
                 <tr>
                     <th colspan="2" rowspan="2">PERIODOS</th>
@@ -375,7 +375,24 @@
 
             AQUI IRA GRAFICO
             DE LA VACA Y EL PERRO
-
+            <div class="bcg-container">
+                <div class="quadrant" id="star-quadrant">
+                    <img src="estrella.png" alt="estrella">
+                    <div class="quadrant-label">Estrellas</div>
+                </div>
+                <div class="quadrant" id="question-quadrant">
+                    <img src="interrogante.png" alt="Interrogante">
+                    <div class="quadrant-label">Interrogantes</div>
+                </div>
+                <div class="quadrant" id="cashcow-quadrant">
+                    <img src="vaca.png" alt="vaquita">
+                    <div class="quadrant-label">Vacas Lecheras</div>
+                </div>
+                <div class="quadrant" id="dog-quadrant">
+                    <img src="perro.png" alt="Perro">
+                    <div class="quadrant-label">Perros</div>
+                </div>
+            </div>
             <table>
                 <thead>
                     <tr>
