@@ -189,7 +189,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="../analisis/verify.php" class="nav-link">
                     <i class="fas fa-chart-bar"></i>
                     Análisis Interno y Externo
                     <i class="fas fa-chevron-right icon-right"></i>
