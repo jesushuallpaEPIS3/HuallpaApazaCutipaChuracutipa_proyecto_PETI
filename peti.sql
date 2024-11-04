@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.32-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win64
--- HeidiSQL Versión:             12.6.0.6765
+-- Versión del servidor:         10.4.32-MariaDB-1:10.4.32+maria~ubu2004 - mariadb.org binary distribution
+-- SO del servidor:              debian-linux-gnu
+-- HeidiSQL Versión:             12.8.0.6908
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS `cadenavalor` (
   `punto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.cadenavalor: ~25 rows (aproximadamente)
-INSERT INTO `cadenavalor` (`id`, `enunciado`, `punto`) VALUES
+-- Volcando datos para la tabla peti.cadenavalor: ~12 rows (aproximadamente)
+REPLACE INTO `cadenavalor` (`id`, `enunciado`, `punto`) VALUES
 	(445567, 1, 2),
 	(445567, 2, 2),
 	(445567, 3, 4),
@@ -67,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `foda` (
   `d4` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.foda: ~1 rows (aproximadamente)
-INSERT INTO `foda` (`id`, `f1`, `f2`, `f3`, `f4`, `d1`, `d2`, `d3`, `d4`) VALUES
+-- Volcando datos para la tabla peti.foda: ~0 rows (aproximadamente)
+REPLACE INTO `foda` (`id`, `f1`, `f2`, `f3`, `f4`, `d1`, `d2`, `d3`, `d4`) VALUES
 	(445567, 'Fortaleza 1', 'Fortaleza 2', NULL, NULL, 'Debilidad 1', 'Debilidad 2', NULL, NULL);
 
 -- Volcando estructura para tabla peti.informacion
@@ -78,9 +78,10 @@ CREATE TABLE IF NOT EXISTS `informacion` (
   `descripcion` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.informacion: ~1 rows (aproximadamente)
-INSERT INTO `informacion` (`id`, `nombre`, `descripcion`) VALUES
-	(445567, 'EcoInnovar', 'EcoInnovar es una empresa dedicada al desarrollo y la implementación de soluciones tecnológicas sostenibles que promueven el cuidado del medio ambiente. Ofrecemos productos y servicios que ayudan a reducir la huella de carbono y fomentan un estilo de vida más ecológico.');
+-- Volcando datos para la tabla peti.informacion: ~2 rows (aproximadamente)
+REPLACE INTO `informacion` (`id`, `nombre`, `descripcion`) VALUES
+	(445567, 'EcoInnovar', 'EcoInnovar es una empresa dedicada al desarrollo y la implementación de soluciones tecnológicas sostenibles que promueven el cuidado del medio ambiente. Ofrecemos productos y servicios que ayudan a reducir la huella de carbono y fomentan un estilo de vida más ecológico.'),
+	(445570, 'ECO AMIGOS', 'xddd');
 
 -- Volcando estructura para tabla peti.mision
 CREATE TABLE IF NOT EXISTS `mision` (
@@ -88,9 +89,10 @@ CREATE TABLE IF NOT EXISTS `mision` (
   `mision` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.mision: ~1 rows (aproximadamente)
-INSERT INTO `mision` (`id`, `mision`) VALUES
-	(445567, 'En EcoSolutions, nos comprometemos a ofrecer soluciones sostenibles e innovadoras que promuevan un futuro más limpio y saludable. Nuestra misión es empoderar a las comunidades a través de productos ecológicos y servicios que reduzcan el impacto ambiental, fomenten la economía circular y mejoren la calidad de vida. Trabajamos con pasión y dedicación para inspirar un cambio positivo en el mundo, promoviendo la conciencia ambiental y la responsabilidad social.');
+-- Volcando datos para la tabla peti.mision: ~2 rows (aproximadamente)
+REPLACE INTO `mision` (`id`, `mision`) VALUES
+	(445567, 'En EcoSolutions, nos comprometemos a ofrecer soluciones sostenibles e innovadoras que promuevan un futuro más limpio y saludable. Nuestra misión es empoderar a las comunidades a través de productos ecológicos y servicios que reduzcan el impacto ambiental, fomenten la economía circular y mejoren la calidad de vida. Trabajamos con pasión y dedicación para inspirar un cambio positivo en el mundo, promoviendo la conciencia ambiental y la responsabilidad social.'),
+	(445571, 'Nos dedicamos a recoger basura.\r\n');
 
 -- Volcando estructura para tabla peti.objetivos
 CREATE TABLE IF NOT EXISTS `objetivos` (
@@ -100,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `objetivos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Volcando datos para la tabla peti.objetivos: ~3 rows (aproximadamente)
-INSERT INTO `objetivos` (`id`, `id_objetivo`, `descripcionObj`) VALUES
+REPLACE INTO `objetivos` (`id`, `id_objetivo`, `descripcionObj`) VALUES
 	(445567, 1, 'objetivo1'),
 	(445567, 2, 'objetivo2'),
 	(445567, 3, 'objetivo3');
@@ -112,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `obj_especificos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Volcando datos para la tabla peti.obj_especificos: ~6 rows (aproximadamente)
-INSERT INTO `obj_especificos` (`id_objetivo`, `descripcionEspObj`) VALUES
+REPLACE INTO `obj_especificos` (`id_objetivo`, `descripcionEspObj`) VALUES
 	(1, 'objetivo1.1'),
 	(1, 'objetivo1.2'),
 	(2, 'objetivo2.1'),
@@ -122,15 +124,18 @@ INSERT INTO `obj_especificos` (`id_objetivo`, `descripcionEspObj`) VALUES
 
 -- Volcando estructura para tabla peti.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int(11) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=445572 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.usuario: ~1 rows (aproximadamente)
-INSERT INTO `usuario` (`id`, `username`, `password`) VALUES
-	(445567, 'user123', '123');
+-- Volcando datos para la tabla peti.usuario: ~4 rows (aproximadamente)
+REPLACE INTO `usuario` (`id`, `username`, `password`) VALUES
+	(445567, 'user123', '123'),
+	(445569, 'albert1', '123'),
+	(445570, 'xdxddxd', '123'),
+	(445571, 'SAPO', '123');
 
 -- Volcando estructura para tabla peti.valores
 CREATE TABLE IF NOT EXISTS `valores` (
@@ -138,8 +143,8 @@ CREATE TABLE IF NOT EXISTS `valores` (
   `valores` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.valores: ~5 rows (aproximadamente)
-INSERT INTO `valores` (`id`, `valores`) VALUES
+-- Volcando datos para la tabla peti.valores: ~0 rows (aproximadamente)
+REPLACE INTO `valores` (`id`, `valores`) VALUES
 	(445567, 'Sostenibilidad: Comprometidos con la protección del medio ambiente en cada decisión que tomamos.'),
 	(445567, 'Innovación: Fomentamos la creatividad y la búsqueda constante de nuevas soluciones que mejoren la calidad de vida.'),
 	(445567, 'Integridad: Actuamos con transparencia y honestidad en todas nuestras interacciones.'),
@@ -152,9 +157,10 @@ CREATE TABLE IF NOT EXISTS `vision` (
   `vision` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.vision: ~1 rows (aproximadamente)
-INSERT INTO `vision` (`id`, `vision`) VALUES
-	(445567, 'Ser líderes globales en la transformación hacia un futuro sostenible, donde cada persona y comunidad tenga acceso a soluciones ecológicas que preserven nuestro planeta. Aspiramos a inspirar un movimiento mundial hacia la conciencia ambiental y la innovación, convirtiéndonos en un referente de integridad y responsabilidad en la industria, mientras creamos un legado duradero de bienestar para las generaciones futuras.');
+-- Volcando datos para la tabla peti.vision: ~0 rows (aproximadamente)
+REPLACE INTO `vision` (`id`, `vision`) VALUES
+	(445567, 'Ser líderes globales en la transformación hacia un futuro sostenible, donde cada persona y comunidad tenga acceso a soluciones ecológicas que preserven nuestro planeta. Aspiramos a inspirar un movimiento mundial hacia la conciencia ambiental y la innovación, convirtiéndonos en un referente de integridad y responsabilidad en la industria, mientras creamos un legado duradero de bienestar para las generaciones futuras.'),
+	(445571, 'Nos dedicamos a recoger la basura.\r\n');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
