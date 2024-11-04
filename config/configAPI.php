@@ -1,5 +1,5 @@
 <?php
 return [
-    'API_KEY' => 'MI-API-mi newasas:3'
+    'API_KEY' => 'MI-API-KEY:3'
 ];
 ?>
