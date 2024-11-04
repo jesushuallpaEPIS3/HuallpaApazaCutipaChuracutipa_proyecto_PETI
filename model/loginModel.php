@@ -22,9 +22,8 @@
                 }
                 
             } catch (PDOException $e) {
-                // Manejo de errores, puedes registrar el error o lanzar una excepción
                 error_log("Error en la consulta: " . $e->getMessage());
-                return false; // O lanzar una excepción si prefieres
+                return false;
             }
         }
     }
