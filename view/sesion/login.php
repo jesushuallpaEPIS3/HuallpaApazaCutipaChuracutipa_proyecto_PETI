@@ -10,6 +10,15 @@
 <body>
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
+        
+        <?php
+        session_start();
+        if (isset($_SESSION['error'])) {
+            echo '<div class="error-message">' . $_SESSION['error'] . '</div>';
+            unset($_SESSION['error']);
+        }
+        ?>
+
         <form method="post" action="control.php" onsubmit="return validateCaptcha()">
             <div class="input-group">
                 <input type="text" id="username" name="username" required placeholder=" ">
@@ -25,8 +34,25 @@
             <input type="text" id="captchaInput" name="captcha" required placeholder="Ingrese el código" maxlength="4">
             <button type="submit">Iniciar Sesión</button>
         </form>
+
         <div class="add-user">
             <a href="#" id="addUserBtn">Agregar Usuario</a>
+        </div>
+
+        <div id="registrationForm" style="display: none;">
+            <h2>Registrar Nuevo Usuario</h2>
+            <form method="post" action="control.php">
+                <div class="input-group">
+                    <input type="text" id="newUsername" name="new_username" required placeholder=" ">
+                    <label for="newUsername">Nuevo Usuario</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="newPassword" name="new_password" required placeholder=" ">
+                    <label for="newPassword">Nueva Contraseña</label>
+                </div>
+                <button type="submit">Registrar</button>
+                <button type="button" id="cancelRegistrationBtn">Cancelar</button>
+            </form>
         </div>
     </div>
 
@@ -76,6 +102,16 @@
         };
 
         window.onload = generateCaptcha;
+
+        document.getElementById('addUserBtn').onclick = function() {
+            document.getElementById('registrationForm').style.display = 'block';
+            document.querySelector('.login-container form').style.display = 'none';
+        };
+
+        document.getElementById('cancelRegistrationBtn').onclick = function() {
+            document.getElementById('registrationForm').style.display = 'none';
+            document.querySelector('.login-container form').style.display = 'block';
+        };
     </script>
 </body>
 </html>
