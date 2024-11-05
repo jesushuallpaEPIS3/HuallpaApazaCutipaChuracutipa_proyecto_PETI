@@ -56,5 +56,17 @@ Una vez que los contenedores estén en ejecución, puedes acceder a la aplicaci�
   ```bash
   docker-compose down
   ```
-```
 
+
+
+## acceder a entorno app
+  ```bash
+docker exec -it huallpaapazacutipachuracutipa_proyecto_peti-app-1 bash
+```
+## instalar nano
+  ```bash
+apt-get udpate
+```
+  ```bash
+apt install nano
+```
