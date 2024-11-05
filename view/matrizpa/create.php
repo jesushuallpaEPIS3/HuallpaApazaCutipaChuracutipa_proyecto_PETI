@@ -1,11 +1,11 @@
 <?php
-    require_once("../head/header.php");
+    //require_once("../head/header.php");
 ?>
 
-    <title>MATRIZ PARTICIPACION</title>
+    <!-- <title>MATRIZ PARTICIPACION</title>
     <link rel="stylesheet" href="../head/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
+</head> -->
 <script src="script.js" defer></script>
 <link rel="stylesheet" href="grafico.css">
 <body>
@@ -20,8 +20,8 @@
             <!-- </section>
             <section class="form-container"> -->
 
-            <!-- <form method="post" action="store.php"> -->
-            
+        <form method="post" action="store.php"> 
+
             <!-- PREVISIÓN DE VENTAS -->
             <table border="1" oninput="actualizarTbPrivisionVentas(); maxVentaCp();">
                 <tr>
@@ -428,7 +428,8 @@
                     </tr>
                 </tbody>
             </table>
-
+            <input type="submit" value="Enviar">
+        </form>
             </section>
         </main>
     </div>
