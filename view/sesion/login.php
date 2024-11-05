@@ -8,51 +8,75 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        
-        <?php
-        session_start();
-        if (isset($_SESSION['error'])) {
-            echo '<div class="error-message">' . $_SESSION['error'] . '</div>';
-            unset($_SESSION['error']);
-        }
-        ?>
-
-        <form method="post" action="control.php" onsubmit="return validateCaptcha()">
-            <div class="input-group">
-                <input type="text" id="username" name="username" required placeholder=" ">
-                <label for="username">Usuario</label>
-            </div>
-            <div class="input-group">
-                <input type="password" id="password" name="password" required placeholder=" ">
-                <label for="password">Contraseña</label>
-            </div>
-            <div class="captcha" id="captchaContainer">
-                <canvas id="captchaCanvas" width="120" height="40"></canvas>
-            </div>
-            <input type="text" id="captchaInput" name="captcha" required placeholder="Ingrese el código" maxlength="4">
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-
-        <div class="add-user">
-            <a href="#" id="addUserBtn">Agregar Usuario</a>
+    <div class="card">
+    <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+                <g transform="matrix(5 0 0 5 320.4 240.4)">
+                    <circle cx="0" cy="0" r="40" fill="var(--primary-color)"></circle>
+                </g>
+                <g transform="matrix(1.5 0 0 1.5 268.7 213.7)">
+                    <circle cx="0" cy="0" r="40" fill="#ffffff"></circle>
+                </g>
+                <g transform="matrix(1.52 0 0 1.52 362.9 210.9)">
+                    <circle cx="0" cy="0" r="40" fill="#ffffff"></circle>
+                </g>
+                <g transform="matrix(1.38 0 0 1.38 318.5 286.5)">
+                    <circle cx="0" cy="0" r="40" fill="#ffffff"></circle>
+                </g>
+                <g transform="matrix(0.24 -0.18 0.74 0.99 290.57 243.57)">
+                    <polygon points="-50,-50 -50,50 50,50 50,-50" fill="#ffffff"></polygon>
+                </g>
+                <g transform="matrix(0.24 0.15 -0.66 1.04 342.03 248.34)">
+                    <polygon points="-50,-50 -50,50 50,50 50,-50" fill="#ffffff"></polygon>
+                </g>
+            </svg>
         </div>
 
-        <div id="registrationForm" style="display: none;">
-            <h2>Registrar Nuevo Usuario</h2>
-            <form method="post" action="control.php">
+        <div class="login-container">
+            <h2 id="loginTitle">Iniciar Sesión</h2>
+            
+            <?php
+            session_start();
+            if (isset($_SESSION['error'])) {
+                echo '<div class="error-message">' . $_SESSION['error'] . '</div>';
+                unset($_SESSION['error']);
+            }
+            ?>
+
+            <form method="post" action="control.php" onsubmit="return validateCaptcha()">
                 <div class="input-group">
-                    <input type="text" id="newUsername" name="new_username" required placeholder=" ">
-                    <label for="newUsername">Nuevo Usuario</label>
+                    <input type="text" id="username" name="username" required placeholder=" ">
+                    <label for="username">Usuario</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" id="newPassword" name="new_password" required placeholder=" ">
-                    <label for="newPassword">Nueva Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder=" ">
+                    <label for="password">Contraseña</label>
                 </div>
-                <button type="submit">Registrar</button>
-                <button type="button" id="cancelRegistrationBtn">Cancelar</button>
+                <div class="captcha" id="captchaContainer">
+                    <canvas id="captchaCanvas" width="120" height="40"></canvas>
+                </div>
+                <input type="text" id="captchaInput" name="captcha" required placeholder="Ingrese el código" maxlength="4">
+                <button type="submit" class="btn">Iniciar Sesión</button>
+                <button type="button" class="btn secondary" onclick="showRegistrationForm()">Agregar Usuario</button>
             </form>
+
+            <div id="registrationForm" style="display: none;">
+                <h2>Registrar Nuevo Usuario</h2>
+                <form method="post" action="control.php">
+                    <div class="input-group">
+                        <input type="text" id="newUsername" name="new_username" required placeholder=" ">
+                        <label for="newUsername">Nuevo Usuario</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="newPassword" name="new_password" required placeholder=" ">
+                        <label for="newPassword">Nueva Contraseña</label>
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit" class="btn">Registrar</button>
+                        <button type="button" class="btn secondary" onclick="hideRegistrationForm()">Cancelar</button>
+                    </div>
+                </form> 
+            </div>
         </div>
     </div>
 
@@ -103,15 +127,17 @@
 
         window.onload = generateCaptcha;
 
-        document.getElementById('addUserBtn').onclick = function() {
+        function showRegistrationForm() {
             document.getElementById('registrationForm').style.display = 'block';
             document.querySelector('.login-container form').style.display = 'none';
-        };
+            document.getElementById('loginTitle').style.display = 'none';
+        }
 
-        document.getElementById('cancelRegistrationBtn').onclick = function() {
+        function hideRegistrationForm() {
             document.getElementById('registrationForm').style.display = 'none';
             document.querySelector('.login-container form').style.display = 'block';
-        };
+            document.getElementById('loginTitle').style.display = 'block';
+        }
     </script>
 </body>
 </html>
