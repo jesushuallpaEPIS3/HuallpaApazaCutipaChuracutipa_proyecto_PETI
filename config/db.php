@@ -1,6 +1,6 @@
 <?php
     class db{
-        private $host= "localhost";
+        private $host= "localhost"; #db para hacer el contenedor
         private $dbname = "peti";
         private $user = "root";
         private $password = "";
