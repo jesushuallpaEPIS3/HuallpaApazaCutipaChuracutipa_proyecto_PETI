@@ -51,6 +51,7 @@ Una vez que los contenedores estén en ejecución, puedes acceder a la aplicaci�
 ## Notas adicionales
 
 - Asegúrate de que los puertos necesarios estén libres en tu máquina.
+- Asegurarse de confuigurar el archivo de conexion cambiar localhost a db para usar el docker
 - Si deseas detener los contenedores, utiliza:
 
   ```bash
