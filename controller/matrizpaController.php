@@ -34,6 +34,9 @@
             return  $this->model->showTCM($id);
 
         }
+        public function verDatosEDGS($id){
+            return $this->model->showEDGS($id);
+        }
 
         public function comprobar($id){
             return ($this->model->comprobar($id)) ? header("Location: show.php") : header("Location: create.php") ;

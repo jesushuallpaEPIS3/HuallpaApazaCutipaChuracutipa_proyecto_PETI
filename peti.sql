@@ -72,7 +72,38 @@ CREATE TABLE IF NOT EXISTS `evo_demanda_global` (
   `valor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.evo_demanda_global: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.evo_demanda_global: ~30 rows (aproximadamente)
+INSERT INTO `evo_demanda_global` (`id`, `anio`, `producto`, `valor`) VALUES
+	(445567, 1, '1', 1),
+	(445567, 2, '1', 2),
+	(445567, 3, '1', 3),
+	(445567, 4, '1', 4),
+	(445567, 5, '1', 5),
+	(445567, NULL, '1', 6),
+	(445567, 2019, '2', 7),
+	(445567, 2020, '2', 3),
+	(445567, 2021, '2', NULL),
+	(445567, NULL, '2', 3),
+	(445567, 6, '2', NULL),
+	(445567, 7, '2', NULL),
+	(445567, 8, '3', 8),
+	(445567, NULL, '3', 9),
+	(445567, 9, '3', NULL),
+	(445567, 12, '3', NULL),
+	(445567, 13, '3', 666),
+	(445567, 14, '3', NULL),
+	(445567, 15, '4', 10),
+	(445567, 2, '4', 12),
+	(445567, NULL, '4', NULL),
+	(445567, NULL, '4', NULL),
+	(445567, NULL, '4', NULL),
+	(445567, NULL, '4', NULL),
+	(445567, NULL, '5', 11),
+	(445567, NULL, '5', 10),
+	(445567, NULL, '5', 11),
+	(445567, NULL, '5', 12),
+	(445567, NULL, '5', 10),
+	(445567, NULL, '5', NULL);
 
 -- Volcando estructura para tabla peti.foda
 CREATE TABLE IF NOT EXISTS `foda` (
@@ -98,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `informacion` (
   `descripcion` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.informacion: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.informacion: ~1 rows (aproximadamente)
 INSERT INTO `informacion` (`id`, `nombre`, `descripcion`) VALUES
 	(445567, 'EcoInnovar', 'EcoInnovar es una empresa dedicada al desarrollo y la implementación de soluciones tecnológicas sostenibles que promueven el cuidado del medio ambiente. Ofrecemos productos y servicios que ayudan a reducir la huella de carbono y fomentan un estilo de vida más ecológico.');
 
@@ -108,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `mision` (
   `mision` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.mision: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.mision: ~1 rows (aproximadamente)
 INSERT INTO `mision` (`id`, `mision`) VALUES
 	(445567, 'En EcoSolutions, nos comprometemos a ofrecer soluciones sostenibles e innovadoras que promuevan un futuro más limpio y saludable. Nuestra misión es empoderar a las comunidades a través de productos ecológicos y servicios que reduzcan el impacto ambiental, fomenten la economía circular y mejoren la calidad de vida. Trabajamos con pasión y dedicación para inspirar un cambio positivo en el mundo, promoviendo la conciencia ambiental y la responsabilidad social.');
 
@@ -185,10 +216,10 @@ INSERT INTO `tcm` (`id`, `periodo`, `producto`, `valor`) VALUES
 	(445567, NULL, '2', 8),
 	(445567, NULL, '2', 9),
 	(445567, NULL, '2', 10),
-	(445567, NULL, '4', NULL),
+	(445567, NULL, '3', 0),
 	(445567, NULL, '3', 11),
 	(445567, NULL, '3', 12),
-	(445567, NULL, '3', NULL),
+	(445567, NULL, '4', NULL),
 	(445567, NULL, '3', NULL),
 	(445567, NULL, '3', NULL),
 	(445567, NULL, '4', 13),
@@ -228,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `vision` (
   `vision` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.vision: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.vision: ~1 rows (aproximadamente)
 INSERT INTO `vision` (`id`, `vision`) VALUES
 	(445567, 'Ser líderes globales en la transformación hacia un futuro sostenible, donde cada persona y comunidad tenga acceso a soluciones ecológicas que preserven nuestro planeta. Aspiramos a inspirar un movimiento mundial hacia la conciencia ambiental y la innovación, convirtiéndonos en un referente de integridad y responsabilidad en la industria, mientras creamos un legado duradero de bienestar para las generaciones futuras.');
 

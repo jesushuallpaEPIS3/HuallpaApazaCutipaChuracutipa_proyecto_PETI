@@ -10,6 +10,7 @@
     $foda = $obj->verfoda2($id);
     $tbPV = $obj->verDatosPV($id);
     $tbTCM = $obj->verDatosTCM($id);
+    $tbEDGS = $obj->verDatosEDGS($id);
 ?>
 
     <!-- <title>MATRIZ PARTICIPACION</title>
@@ -180,51 +181,51 @@
                 </tr>
                 <tr>
                     <td>2019</td>
-                    <td><input type="text" name="anoproducto1" required ></td>
-                    <td><input type="text" name="anoproducto2" required></td>
-                    <td><input type="text" name="anoproducto3" required></td>
-                    <td><input type="text" name="anoproducto4" required></td>
-                    <td><input type="text" name="anoproducto5" required></td>
+                    <td><input type="text" name="anoproducto1" value="<?= $tbEDGS[0][3] ?>" required ></td>
+                    <td><input type="text" name="anoproducto2" value="<?= $tbEDGS[6][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto3" value="<?= $tbEDGS[12][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto4" value="<?= $tbEDGS[18][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto5" value="<?= $tbEDGS[24][3] ?>" required></td>
                 </tr>
                 <tr>
                     <td>2020</td>
-                    <td><input type="text" name="anoproducto1" required></td>
-                    <td><input type="text" name="anoproducto2" required></td>
-                    <td><input type="text" name="anoproducto3" required></td>
-                    <td><input type="text" name="anoproducto4" required></td>
-                    <td><input type="text" name="anoproducto5" required></td>
+                    <td><input type="text" name="anoproducto1" value="<?= $tbEDGS[1][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto2" value="<?= $tbEDGS[7][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto3" value="<?= $tbEDGS[13][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto4" value="<?= $tbEDGS[19][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto5" value="<?= $tbEDGS[25][3] ?>" required></td>
                 </tr>
                 <tr>
                     <td>2021</td>
-                    <td><input type="text" name="anoproducto1" required></td>
-                    <td><input type="text" name="anoproducto2" required></td>
-                    <td><input type="text" name="anoproducto3" required></td>
-                    <td><input type="text" name="anoproducto4" required></td>
-                    <td><input type="text" name="anoproducto5" required></td>
+                    <td><input type="text" name="anoproducto1" value="<?= $tbEDGS[2][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto2" value="<?= $tbEDGS[8][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto3" value="<?= $tbEDGS[14][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto4" value="<?= $tbEDGS[20][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto5" value="<?= $tbEDGS[26][3] ?>" required></td>
                 </tr>
                 <tr>
                     <td>2022</td>
-                    <td><input type="text" name="anoproducto1" required></td>
-                    <td><input type="text" name="anoproducto2" required></td>
-                    <td><input type="text" name="anoproducto3" required></td>
-                    <td><input type="text" name="anoproducto4" required></td>
-                    <td><input type="text" name="anoproducto5" required></td>
+                    <td><input type="text" name="anoproducto1" value="<?= $tbEDGS[3][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto2" value="<?= $tbEDGS[9][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto3" value="<?= $tbEDGS[15][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto4" value="<?= $tbEDGS[21][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto5" value="<?= $tbEDGS[27][3] ?>" required></td>
                 </tr>
                 <tr>
                     <td>2023</td>
-                    <td><input type="text" name="anoproducto1" required></td>
-                    <td><input type="text" name="anoproducto2" required></td>
-                    <td><input type="text" name="anoproducto3" required></td>
-                    <td><input type="text" name="anoproducto4" required></td>
-                    <td><input type="text" name="anoproducto5" required></td>
+                    <td><input type="text" name="anoproducto1" value="<?= $tbEDGS[4][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto2" value="<?= $tbEDGS[10][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto3" value="<?= $tbEDGS[16][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto4" value="<?= $tbEDGS[22][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto5" value="<?= $tbEDGS[28][3] ?>" required></td>
                 </tr>
                 <tr>
                     <td>2024</td>
-                    <td><input type="text" name="anoproducto1" required></td>
-                    <td><input type="text" name="anoproducto2" required></td>
-                    <td><input type="text" name="anoproducto3" required></td>
-                    <td><input type="text" name="anoproducto4" required></td>
-                    <td><input type="text" name="anoproducto5" required></td>
+                    <td><input type="text" name="anoproducto1" value="<?= $tbEDGS[5][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto2" value="<?= $tbEDGS[11][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto3" value="<?= $tbEDGS[17][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto4" value="<?= $tbEDGS[23][3] ?>" required></td>
+                    <td><input type="text" name="anoproducto5" value="<?= $tbEDGS[29][3] ?>" required></td>
                 </tr>
             </table>
 

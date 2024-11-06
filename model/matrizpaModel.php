@@ -26,7 +26,13 @@
             return ($query->rowCount() > 0) ? $query->fetchAll() : false;
         }
         public function showTCM($id){
-            $query = $this->PDO->prepare("SELECT * FROM tcm WHERE id=:id");
+            $query = $this->PDO->prepare("SELECT * FROM tcm WHERE id=:id ORDER BY producto ASC");
+            $query->bindParam(":id",$id);
+            $query->execute();
+            return ($query->rowCount() > 0) ? $query->fetchAll() : false;
+        }
+        public function showEDGS($id){
+            $query = $this->PDO->prepare("SELECT * FROM evo_demanda_global WHERE id=:id");
             $query->bindParam(":id",$id);
             $query->execute();
             return ($query->rowCount() > 0) ? $query->fetchAll() : false;
