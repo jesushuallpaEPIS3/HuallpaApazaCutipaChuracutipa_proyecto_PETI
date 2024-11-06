@@ -2,9 +2,9 @@
     class cadenavalorController{
         private $model;
         public function __construct(){
-            require_once("../../model/cadenavalorModel.php");
+            require_once("../../model/matrizpaModel.php");
             require_once("../../model/fodaModel.php");
-            $this->model = new cadenavalorModel();
+            $this->model = new matrizpaModel();
             $this->modelfoda = new fodaModel();
         }
         public function guardar($id, $puntos){
@@ -16,16 +16,23 @@
             }
             header("Location:show.php");
         }
-        public function guardarfoda($id,$f1,$f2,$d1,$d2){
+        public function guardarfoda($id,$f3,$f4,$d3,$d4){
             if($this->modelfoda->show1($id)){
-                $this->modelfoda->update1($id,$f1,$f2,$d1,$d2);
-            }else $this->modelfoda->insertar1($id,$f1,$f2,$d1,$d2);
+                $this->modelfoda->update2($id,$f3,$f4,$d3,$d4);
+            }else $this->modelfoda->insertar2($id,$f3,$f4,$d3,$d4);
+            
         }
-        public function verForm($id){
-            return ($this->model->verForm($id)!=false) ? $this->model->verForm($id) : header("Location:create.php");
+
+        public function verfoda2($id){
+            return ($this->modelfoda->show1($id)!=false) ? $this->modelfoda->show1($id) : "";
         }
-        public function verfoda1($id){
-            return ($this->modelfoda->show1($id)!=false) ? $this->modelfoda->show1($id) : header("Location:create.php");
+
+        public function verDatosPV($id){
+            return $this->model->showPV($id);
+        }
+        public function verDatosTCM($id){
+            return  $this->model->showTCM($id);
+
         }
 
         public function comprobar($id){

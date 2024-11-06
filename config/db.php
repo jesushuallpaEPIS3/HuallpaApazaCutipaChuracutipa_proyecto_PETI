@@ -1,6 +1,6 @@
 <?php
     class db{
-        private $host= "db"; #db para hacer el contenedor  -  localhost para xampp
+        private $host= "localhost"; #db para hacer el contenedor  -  localhost para xampp
         private $dbname = "peti";
         private $user = "root";
         private $password = "";
