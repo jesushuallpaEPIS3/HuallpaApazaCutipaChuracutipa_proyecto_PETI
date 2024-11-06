@@ -203,7 +203,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="../matrizpa/show.php" class="nav-link">
                     <i class="fas fa-th"></i>
                     Matriz de Participación
                     <i class="fas fa-chevron-right icon-right"></i>

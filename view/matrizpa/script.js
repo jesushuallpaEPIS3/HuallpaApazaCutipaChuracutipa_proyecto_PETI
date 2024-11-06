@@ -1,7 +1,7 @@
 function actualizarTbPrivisionVentas() {
-    const ventas = document.getElementsByName("ventas");
+    const ventas = document.getElementsByName("ventas[]");
     const porcentajes = document.getElementsByName("porcentaje");
-    const producto = document.getElementsByName("producto");
+    const producto = document.getElementsByName("producto[]");
     const nameproducto = document.getElementsByName("nameproducto");
     const ventasproduc = document.getElementsByName("ventasproduc");
     let bcgventas = document.getElementsByName("bcgventas");
@@ -9,6 +9,7 @@ function actualizarTbPrivisionVentas() {
     let totalVentas = 0;
 
     for (let i = 0; i < ventas.length; i++) {
+        console.log(ventas[i].value);
         totalVentas += parseFloat(ventas[i].value) || 0;
         ventasproduc[i].innerText = ventas[i].value;
     }
@@ -35,11 +36,14 @@ function mostarSimboloPorcentaje(){
     let suma;
     for (let i = 1; i <= 5; i++) {
         suma = 0;
-        let producto = "producto" + i;
+        let producto = "producto" + i + "[]";
         producto = document.getElementsByName(producto);
         for (let j = 0; j < producto.length; j++) {
             if(producto[j].value != ""){
                 suma += parseFloat(producto[j].value.replace('%', ''));
+                // console.log("---");
+                // console.log(producto[j].value.replace('%', ''));
+                // console.log("---");
                 const soloNumeros = producto[j].value.replace(/[^0-9.]/g, '');
                 producto[j].value = soloNumeros ? soloNumeros + "%" : "";
             }
@@ -53,12 +57,12 @@ function mostarSimboloPorcentaje(){
 
 function simboloPorcentaje(){
     for (let i = 1; i <= 5; i++) {
-        let anoproducto = "anoproducto" + i;
+        let anoproducto = "anoproducto" + i + "[]";
         anoproducto = document.getElementsByName(anoproducto);
         for (let j = 0; j < anoproducto.length; j++) {
             if(anoproducto[j].value != ""){
                 const soloNumeros = anoproducto[j].value.replace(/[^0-9.]/g, '');
-                console.log(soloNumeros);
+                //console.log(soloNumeros);
                 anoproducto[j].value = soloNumeros ? soloNumeros + "%" : "";
             }
         }
@@ -68,12 +72,12 @@ function simboloPorcentaje(){
 function maxVentaCp(){
     let max;
     let prm = document.getElementsByName("prm");
-    const ventas = document.getElementsByName("ventas");
+    const ventas = document.getElementsByName("ventas[]");
     // console.log("VENTAS");
     // console.log(ventas[0].value);
 
     for (let i = 1; i <= 5; i++) {
-        let cpproducto = "cpproducto" + i;
+        let cpproducto = "cpproducto" + i + "[]";
         let mayorcpproducto = "mayorcpproducto" + i;
         max = 0;
         cpproducto = document.getElementsByName(cpproducto);
@@ -101,7 +105,7 @@ function generarMatrizBCG() {
     function obtenerDatosTabla() {
       const productos = [];
       
-      const nombres = document.querySelectorAll("[name='producto']");
+      const nombres = document.querySelectorAll("[name='producto[]']");
       
       const tcmValores = document.querySelectorAll("[name='tcm']");
       const prmValores = document.querySelectorAll("[name='prm']");
@@ -172,3 +176,21 @@ function generarMatrizBCG() {
       document.querySelector(".bcg-container").appendChild(bolita);
     });
   }
+
+function cargarPagina() {
+     actualizarTbPrivisionVentas();
+     mostarSimboloPorcentaje();
+     simboloPorcentaje();
+     maxVentaCp();
+     generarMatrizBCG();
+ }
+
+window.onload = cargarPagina;
+
+// window.onload = function() {
+// actualizarTbPrivisionVentas();
+// mostrarSimboloPorcentaje();
+// simboloPorcentaje();
+// maxVentaCp();
+// generarMatrizBCG();
+// };

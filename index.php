@@ -191,7 +191,7 @@
             <button class="button" data-number="4" onclick="location.href='view/objetivos/verify.php'">Objetivos</button>
             <button class="button" data-number="5" onclick="location.href='view/analisis/verify.php'">Análisis Interno y Externo</button>
             <button class="button" data-number="6" onclick="location.href='view/cadenavalor/verify.php'">Cadena de Valor</button>
-            <button class="button" data-number="7" onclick="location.href='view/matrizpa/create.php'">Matriz de Participación</button>
+            <button class="button" data-number="7" onclick="location.href='view/matrizpa/show.php'">Matriz de Participación</button>
             <!-- <button class="button" data-number="8" onclick="location.href='las_5_fuerzas/las_5_fuerzas.php'">5 Fuerzas de Porter</button>
             <button class="button" data-number="9" onclick="location.href='pest/pest.php'">Análisis PEST</button>
             <button class="button" data-number="10" onclick="location.href='identificacion_estrategia/identificacion_estrategia.php'">Identificación de Estrategia</button>

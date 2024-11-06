@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.27-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.32-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             12.8.0.6908
+-- HeidiSQL Versión:             12.6.0.6765
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -67,43 +67,45 @@ INSERT INTO `cadenavalor` (`id`, `enunciado`, `punto`) VALUES
 -- Volcando estructura para tabla peti.evo_demanda_global
 CREATE TABLE IF NOT EXISTS `evo_demanda_global` (
   `id` int(11) DEFAULT NULL,
-  `anio` int(11) DEFAULT NULL,
+  `anio` varchar(50) DEFAULT NULL,
   `producto` varchar(100) DEFAULT NULL,
-  `valor` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `valor` varchar(50) DEFAULT NULL,
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cod`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Volcando datos para la tabla peti.evo_demanda_global: ~30 rows (aproximadamente)
-INSERT INTO `evo_demanda_global` (`id`, `anio`, `producto`, `valor`) VALUES
-	(445567, 1, '1', 1),
-	(445567, 2, '1', 2),
-	(445567, 3, '1', 3),
-	(445567, 4, '1', 4),
-	(445567, 5, '1', 5),
-	(445567, NULL, '1', 6),
-	(445567, 2019, '2', 7),
-	(445567, 2020, '2', 3),
-	(445567, 2021, '2', NULL),
-	(445567, NULL, '2', 3),
-	(445567, 6, '2', NULL),
-	(445567, 7, '2', NULL),
-	(445567, 8, '3', 8),
-	(445567, NULL, '3', 9),
-	(445567, 9, '3', NULL),
-	(445567, 12, '3', NULL),
-	(445567, 13, '3', 666),
-	(445567, 14, '3', NULL),
-	(445567, 15, '4', 10),
-	(445567, 2, '4', 12),
-	(445567, NULL, '4', NULL),
-	(445567, NULL, '4', NULL),
-	(445567, NULL, '4', NULL),
-	(445567, NULL, '4', NULL),
-	(445567, NULL, '5', 11),
-	(445567, NULL, '5', 10),
-	(445567, NULL, '5', 11),
-	(445567, NULL, '5', 12),
-	(445567, NULL, '5', 10),
-	(445567, NULL, '5', NULL);
+INSERT INTO `evo_demanda_global` (`id`, `anio`, `producto`, `valor`, `cod`) VALUES
+	(445567, '1', '1', '1', 1),
+	(445567, '2', '1', '2', 2),
+	(445567, '3', '1', '3', 3),
+	(445567, '4', '1', '4', 4),
+	(445567, '5', '1', '5', 5),
+	(445567, NULL, '1', '6', 6),
+	(445567, '0', '2', '7', 7),
+	(445567, '0', '2', '3', 8),
+	(445567, '0', '2', '21', 9),
+	(445567, NULL, '2', '3', 10),
+	(445567, '6', '2', '12', 11),
+	(445567, '7', '2', '3', 12),
+	(445567, '8', '3', '8', 13),
+	(445567, NULL, '3', '9', 14),
+	(445567, '9', '3', NULL, 15),
+	(445567, '12', '3', '11', 16),
+	(445567, '13', '3', '666', 17),
+	(445567, '14', '3', '21', 18),
+	(445567, '15', '4', '10', 19),
+	(445567, '2', '4', '12', 20),
+	(445567, NULL, '4', '31', 21),
+	(445567, NULL, '4', '22', 22),
+	(445567, NULL, '4', '12222', 23),
+	(445567, NULL, '4', '13', 24),
+	(445567, NULL, '5', '11', 25),
+	(445567, NULL, '5', '10', 26),
+	(445567, NULL, '5', '11', 27),
+	(445567, NULL, '5', '12', 28),
+	(445567, NULL, '5', '10', 29),
+	(445567, NULL, '5', '34', 30);
 
 -- Volcando estructura para tabla peti.foda
 CREATE TABLE IF NOT EXISTS `foda` (
@@ -120,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `foda` (
 
 -- Volcando datos para la tabla peti.foda: ~1 rows (aproximadamente)
 INSERT INTO `foda` (`id`, `f1`, `f2`, `f3`, `f4`, `d1`, `d2`, `d3`, `d4`) VALUES
-	(445567, 'fortalez 1', NULL, NULL, NULL, NULL, NULL, 'debilidad 3', NULL);
+	(445567, 'Fortaleza 1', 'Fortaleza 2', 'Fortaleza 3', 'Fortaleza 4', 'Debilidad 1', 'Debilidad 2', 'Debilidad 3', 'Debilidad 4');
 
 -- Volcando estructura para tabla peti.informacion
 CREATE TABLE IF NOT EXISTS `informacion` (
@@ -146,12 +148,60 @@ INSERT INTO `mision` (`id`, `mision`) VALUES
 -- Volcando estructura para tabla peti.niv_venta_competidor
 CREATE TABLE IF NOT EXISTS `niv_venta_competidor` (
   `id` int(11) DEFAULT NULL,
+  `competidor` varchar(50) DEFAULT NULL,
   `producto` varchar(100) DEFAULT NULL,
-  `competidor` int(11) DEFAULT NULL,
-  `valor` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `valor` int(11) DEFAULT NULL,
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cod`)
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.niv_venta_competidor: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.niv_venta_competidor: ~45 rows (aproximadamente)
+INSERT INTO `niv_venta_competidor` (`id`, `competidor`, `producto`, `valor`, `cod`) VALUES
+	(445567, NULL, '1', 13, 1),
+	(445567, NULL, '1', 14, 2),
+	(445567, NULL, '1', 12, 3),
+	(445567, NULL, '1', 32, 4),
+	(445567, NULL, '1', 12, 5),
+	(445567, NULL, '1', 31, 6),
+	(445567, NULL, '1', 12, 7),
+	(445567, NULL, '1', 21, 8),
+	(445567, NULL, '1', 12, 9),
+	(445567, NULL, '2', 11, 10),
+	(445567, NULL, '2', 12, 11),
+	(445567, NULL, '2', 1, 12),
+	(445567, NULL, '2', 32, 13),
+	(445567, NULL, '2', 2, 14),
+	(445567, NULL, '2', 3, 15),
+	(445567, NULL, '2', 4, 16),
+	(445567, NULL, '2', 12, 17),
+	(445567, NULL, '2', 5, 18),
+	(445567, NULL, '3', 6, 19),
+	(445567, NULL, '3', 32, 20),
+	(445567, NULL, '3', 23, 21),
+	(445567, NULL, '3', 32, 22),
+	(445567, NULL, '3', 12, 23),
+	(445567, NULL, '3', 12, 24),
+	(445567, NULL, '3', 21, 25),
+	(445567, NULL, '3', 12, 26),
+	(445567, NULL, '3', 11, 27),
+	(445567, NULL, '4', 32, 28),
+	(445567, NULL, '4', 12, 29),
+	(445567, NULL, '4', 42, 30),
+	(445567, NULL, '4', 12, 31),
+	(445567, NULL, '4', 21, 32),
+	(445567, NULL, '4', 12, 33),
+	(445567, NULL, '4', 12, 34),
+	(445567, NULL, '4', 31, 35),
+	(445567, NULL, '4', 12, 36),
+	(445567, NULL, '5', 12, 37),
+	(445567, NULL, '5', 21, 38),
+	(445567, NULL, '5', 51, 39),
+	(445567, NULL, '5', 31, 40),
+	(445567, NULL, '5', 22, 41),
+	(445567, NULL, '5', 12, 42),
+	(445567, NULL, '5', 12, 43),
+	(445567, NULL, '5', 1, 44),
+	(445567, NULL, '5', 11, 45);
 
 -- Volcando estructura para tabla peti.objetivos
 CREATE TABLE IF NOT EXISTS `objetivos` (
@@ -185,11 +235,11 @@ INSERT INTO `obj_especificos` (`id_objetivo`, `descripcionEspObj`) VALUES
 CREATE TABLE IF NOT EXISTS `prevision_ventas` (
   `id` int(11) DEFAULT NULL,
   `producto` varchar(100) DEFAULT NULL,
-  `cantidad` int(11) DEFAULT NULL
+  `venta` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Volcando datos para la tabla peti.prevision_ventas: ~5 rows (aproximadamente)
-INSERT INTO `prevision_ventas` (`id`, `producto`, `cantidad`) VALUES
+INSERT INTO `prevision_ventas` (`id`, `producto`, `venta`) VALUES
 	(445567, 'Produccto 1', NULL),
 	(445567, 'Produccto 2', 65),
 	(445567, 'Produccto 3', NULL),
@@ -201,36 +251,38 @@ CREATE TABLE IF NOT EXISTS `tcm` (
   `id` int(11) DEFAULT NULL,
   `periodo` varchar(50) DEFAULT NULL,
   `producto` varchar(100) DEFAULT NULL,
-  `valor` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `valor` varchar(50) DEFAULT NULL,
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cod`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Volcando datos para la tabla peti.tcm: ~25 rows (aproximadamente)
-INSERT INTO `tcm` (`id`, `periodo`, `producto`, `valor`) VALUES
-	(445567, NULL, '1', 1),
-	(445567, NULL, '1', 2),
-	(445567, NULL, '1', 3),
-	(445567, NULL, '1', 4),
-	(445567, NULL, '1', 5),
-	(445567, NULL, '2', 6),
-	(445567, NULL, '2', 7),
-	(445567, NULL, '2', 8),
-	(445567, NULL, '2', 9),
-	(445567, NULL, '2', 10),
-	(445567, NULL, '3', 0),
-	(445567, NULL, '3', 11),
-	(445567, NULL, '3', 12),
-	(445567, NULL, '4', NULL),
-	(445567, NULL, '3', NULL),
-	(445567, NULL, '3', NULL),
-	(445567, NULL, '4', 13),
-	(445567, NULL, '4', 14),
-	(445567, NULL, '4', 15),
-	(445567, NULL, '4', NULL),
-	(445567, NULL, '5', 16),
-	(445567, NULL, '5', 17),
-	(445567, NULL, '5', 18),
-	(445567, NULL, '5', NULL),
-	(445567, NULL, '5', NULL);
+INSERT INTO `tcm` (`id`, `periodo`, `producto`, `valor`, `cod`) VALUES
+	(445567, '2020-2021', '1', '1%', 1),
+	(445567, NULL, '1', '2%', 2),
+	(445567, NULL, '1', '3%', 3),
+	(445567, NULL, '1', '4', 4),
+	(445567, NULL, '1', '5', 5),
+	(445567, '2020-2021', '2', '6', 6),
+	(445567, NULL, '2', '7', 7),
+	(445567, NULL, '2', '8', 8),
+	(445567, NULL, '2', '9', 9),
+	(445567, NULL, '2', '10', 10),
+	(445567, '2020-2021', '3', '0', 11),
+	(445567, '2020-2021', '3', '11', 12),
+	(445567, NULL, '3', '12', 13),
+	(445567, NULL, '3', '12', 14),
+	(445567, NULL, '3', '0', 15),
+	(445567, NULL, '4', '0', 16),
+	(445567, NULL, '4', '13', 17),
+	(445567, NULL, '4', '14', 18),
+	(445567, NULL, '4', '15', 19),
+	(445567, NULL, '4', '0', 20),
+	(445567, '2020-2021', '5', '16', 21),
+	(445567, NULL, '5', '17', 22),
+	(445567, NULL, '5', '18', 23),
+	(445567, NULL, '5', '0', 24),
+	(445567, NULL, '5', '0', 25);
 
 -- Volcando estructura para tabla peti.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
