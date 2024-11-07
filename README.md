@@ -18,14 +18,18 @@ Este repositorio contiene el proyecto **PETI**, el cual puedes desplegar utiliza
 
 Este proyecto es una página web que facilita la gestión de elementos clave como visión, misión, objetivos, cadena de valor, matriz FODA y valores organizacionales. Cada usuario puede crear una cuenta y agregar estos valores específicos para su propio perfil. 
 
+
+
 ### Tecnologías Utilizadas
 
-- **Apache**
-- **PHP**
-- **MySQL**
-- **Docker**
-- **Google Console** [Visitar Google Console](https://console.cloud.google.com/)
-- **Gemini IA**
+[![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)](https://httpd.apache.org/)  
+[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)  
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)  
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)  
+[![Google Console](https://img.shields.io/badge/Google_Console-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://console.cloud.google.com/)  
+[![Gemini IA](https://img.shields.io/badge/Gemini-FFD700?style=for-the-badge&logo=google&logoColor=black)](https://gemini.google.com/)  
+
+---
 
 ## Requisitos
 
