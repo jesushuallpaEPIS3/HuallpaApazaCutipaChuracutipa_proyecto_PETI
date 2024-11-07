@@ -1,6 +1,6 @@
 
 
-# Proyecto PETI
+# Proyecto PETI : Web para Planificación de TI
 
 Este repositorio contiene el proyecto **PETI**, el cual puedes desplegar utilizando Docker. A continuación, se detallan los pasos necesarios para clonar y ejecutar el proyecto en tu máquina local.
 
