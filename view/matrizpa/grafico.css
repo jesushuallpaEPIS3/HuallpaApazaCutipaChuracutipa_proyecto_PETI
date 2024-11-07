@@ -50,7 +50,8 @@
 :root {
   --primary-color: #007f7f;
   --primary-dark: #005f5f;
-  --primary-light: #e6f3f3;
+  --primary-text-dark: #ffffff;
+  --primary-light: #519292;
   --background-color: #f8fafa;
   --text-color: #2c3e50;
   --border-color: #e2e8f0;
@@ -115,7 +116,7 @@ th, td {
 
 th {
   background-color: var(--primary-light);
-  color: var(--primary-dark);
+  color: var(--primary-text-dark);
   font-weight: 600;
 }
 
