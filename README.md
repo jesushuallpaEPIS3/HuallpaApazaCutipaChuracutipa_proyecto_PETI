@@ -107,8 +107,10 @@ code .
 Ejecuta el siguiente comando para construir los contenedores y levantarlos en segundo plano:
 
 ```bash
+docker-compose down -v
 docker-compose up -d --build
 ```
+docker-compose down -v
 
 ### Paso 05: Esperar a que cargue
 
