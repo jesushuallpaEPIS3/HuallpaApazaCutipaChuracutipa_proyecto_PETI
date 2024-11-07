@@ -197,6 +197,9 @@
             <button class="button" data-number="10" onclick="location.href='identificacion_estrategia/identificacion_estrategia.php'">Identificación de Estrategia</button>
             <button class="button" data-number="11" onclick="location.href='matriz_came/matriz_came.php'">Matriz CAME</button> -->
         </div>
+
+        <button class="button-large" onclick="location.href='view/resumen/verify.php'">Resumen</button>
+
     </div>
 </body>
 </html>

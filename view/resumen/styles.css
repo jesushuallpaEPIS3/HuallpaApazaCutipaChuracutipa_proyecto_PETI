@@ -1,0 +1,52 @@
+/* Contenedor principal para las columnas */
+.container {
+    display: flex;
+    justify-content: flex-start; /* Alinea las columnas hacia la izquierda */
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%; /* Ocupa el ancho completo */
+    padding: 20px;
+    flex-wrap: wrap; /* Permite que se adapten en pantallas más pequeñas */
+}
+
+/* Cada columna individual */
+.column {
+    background-color: #e0f2f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Permite que cada columna ocupe un espacio igual */
+    min-width: 300px; /* Asegura que las columnas no se vuelvan muy estrechas */
+}
+
+
+/* .column h2 {
+    background-color: #00796b;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+
+.column p {
+    color: #00695c;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+
+.column .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    color: #fff;
+    background-color: #00796b;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.column .btn:hover {
+    background-color: #004d40;
+} */
