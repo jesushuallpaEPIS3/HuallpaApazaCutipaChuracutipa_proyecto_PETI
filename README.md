@@ -148,4 +148,38 @@ Si deseas detener los contenedores en cualquier momento, utiliza el siguiente co
 docker-compose down
 ```
 
+
+Para documentar las tareas terminadas en el README, puedes agregar una sección llamada **Historial de Tareas Completadas** o **Tareas Terminadas** con el formato de cada tarea, el responsable y la fecha de cierre. A continuación, te muestro cómo puedes estructurarlo:
+
 ---
+
+### Tareas Terminadas
+
+| Tarea                                    | Asignado a         | Fecha de cierre   |
+|------------------------------------------|--------------------|-------------------|
+| UI Login                                  | @RicardoCutipa     | Hace 2 días       |
+| Dockerización                             | @AlbertApaza       | Hace 2 días       |
+| Modificación HOOK (Protección API Key)    | @AlbertApaza       | Hace 3 días       |
+| Creación de Nuevo Usuario (Empresas)      | @AlbertApaza       | Hace 3 días       |
+| Creación de Captcha en Login              | @AlbertApaza       | Hace 3 días       |
+| Implementación de IA - Geminis (Visión)   | @AlbertApaza       | Hace 3 días       |
+| Análisis Interno y Externo                | @jesushuallpaEPIS3 | Hace 5 días       |
+| Código Análisis Interno y Externo         | @jesushuallpaEPIS3 | Hace 3 semanas    |
+| Implementación de IA - Geminis (Misión)   | @AlbertApaza       | Hace 3 semanas    |
+| Estructura del Análisis Interno Externo   | @jesushuallpaEPIS3 | Hace 3 semanas    |
+| Conexión a la DB e Ingreso de Datos       | @erick00xx         | Hace 3 semanas    |
+| Comprobación de Inicio de Sesión          | @erick00xx         | Hace 3 semanas    |
+| Estructuración del Proyecto (MVC)         | @erick00xx         | Hace 3 semanas    |
+| Código Index                              | @RicardoCutipa     | Hace 1 mes        |
+| Información de Empresa                    | @AlbertApaza       | Hace 1 mes        |
+| Código Login                              | @RicardoCutipa     | Hace 1 mes        |
+| Resumen del Plan                          | @AlbertApaza       | Hace 1 mes        |
+| Código Visión                             | @jesushuallpaEPIS3 | Hace 1 mes        |
+| Código Valores                            | @erick00xx         | Hace 1 mes        |
+| Código Misión                             | @RicardoCutipa     | Hace 3 semanas    |
+| Actualización del README                  | @AlbertApaza       | Hace 3 semanas    |
+| Código Objetivos                          | @AlbertApaza       | Hace 1 mes        |
+
+---
+
+Esta sección le da al lector del README un resumen claro de quién ha trabajado en cada tarea y cuándo se completó.
