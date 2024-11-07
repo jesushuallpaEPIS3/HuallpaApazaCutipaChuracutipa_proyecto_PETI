@@ -305,6 +305,14 @@ CREATE TABLE IF NOT EXISTS `valores` (
 
 -- Volcando datos para la tabla peti.valores: ~0 rows (aproximadamente)
 
+-- Volcando estructura para tabla peti.resumen
+CREATE TABLE IF NOT EXISTS `resumen` (
+  `id` int(11) DEFAULT NULL,
+  `identificacion` varchar(10000) DEFAULT NULL,
+  `conclusion` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
 -- Volcando estructura para tabla peti.vision
 CREATE TABLE IF NOT EXISTS `vision` (
   `id` int(11) DEFAULT NULL,
