@@ -20,16 +20,19 @@ Este proyecto es una página web que facilita la gestión de elementos clave com
 
 
 
+
+
+
 ### Tecnologías Utilizadas
 
-[![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)](https://httpd.apache.org/)  
-[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)  
-[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)  
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)  
-[![Google Console](https://img.shields.io/badge/Google_Console-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://console.cloud.google.com/)  
-[![Gemini IA](https://img.shields.io/badge/Gemini-FFD700?style=for-the-badge&logo=google&logoColor=black)](https://gemini.google.com/)  
+[![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)](https://httpd.apache.org/)
+[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Google Console](https://img.shields.io/badge/Google_Console-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://console.cloud.google.com/)
+[![Gemini IA](https://img.shields.io/badge/Gemini-FFD700?style=for-the-badge&logo=google&logoColor=black)](https://gemini.google.com/)
+[![GitHub Codespaces](https://img.shields.io/badge/GitHub_Codespaces-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/codespaces)
 
----
 
 ## Requisitos
 
