@@ -12,45 +12,8 @@ $API_KEY = $config['API_KEY'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Misión de tu Empresa</title>
-    <link rel="stylesheet" href="../head/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-        }
-        
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-        }
-        
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -86,9 +49,27 @@ $API_KEY = $config['API_KEY'];
                     </select>
                     
                     <div class="button-container">
-                        <button type="button" id="generateButton">Consultar con IA</button>
-                        <button type="button" id="correctButton">Corregir Ortografía IA</button>
-                        <input type="submit" value="Guardar Misión" id="saveButton">
+                    <button type="button" id="generateButton" class="ai-button">
+                        <div class="button-background"></div>
+                        <div class="button-shimmer"></div>
+                        <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.813-1.912a2 2 0 001.272-1.272L12 3z"/>
+                        </svg>
+                        <span class="button-text">Consultar con IA</span>
+                        <span class="generating-text">Generando<span class="ellipsis">...</span></span>
+                        <div class="spinner"></div>
+                    </button>
+                    <button type="button" id="correctButton" class="ai-button">
+                        <div class="button-background"></div>
+                        <div class="button-shimmer"></div>
+                        <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.813-1.912a2 2 0 001.272-1.272L12 3z"/>
+                        </svg>
+                        <span class="button-text">Corregir Ortografía IA</span>
+                        <span class="generating-text">Corrigiendo<span class="ellipsis">...</span></span>
+                        <div class="spinner"></div>
+                    </button>
+                    <input type="submit" value="Guardar Misión" id="saveButton">
                     </div>
                 </form>
             </section>
@@ -102,19 +83,25 @@ $API_KEY = $config['API_KEY'];
     
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>Comparar Misión Generada</h2>
-            <h3>Tú escribiste:</h3>
-            <p id="userMissionText"></p>
-            <h3>Misión Generada:</h3>
-            <p id="generatedMissionText"></p>
-            <div class="button-container">
-                <button id="insertTextButton">Insertar Texto</button>
-                <button id="acceptButton">Aceptar</button>
-                <button id="editButton">Editar</button>
+            <div class="modal-header">
+                <h2>Comparar Misión Generada</h2>
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>Tú escribiste:</h3>
+                <p id="userMissionText"></p>
+                <h3>Misión Generada:</h3>
+                <p id="generatedMissionText"></p>
+            </div>
+            <div class="modal-footer">
+                <div class="button-container">
+                    <button id="insertTextButton" class="btn btn-primary">Insertar Texto</button>
+                    <button id="cancelButton" class="btn btn-secondary">Cancelar</button>
+                </div>
             </div>
         </div>
     </div>
+
 
     <script type="importmap">
         {
@@ -132,32 +119,46 @@ $API_KEY = $config['API_KEY'];
         const generatedMissions = {};
 
         document.getElementById('generateButton').addEventListener('click', async () => {
-            const missionText = document.getElementById('mission').value;
-            const tone = document.getElementById('tone').value;
-            const key = `${missionText}-${tone}`;
+    const button = document.getElementById('generateButton');
+    const missionText = document.getElementById('mission').value;
+    const tone = document.getElementById('tone').value;
 
-            if (generatedMissions[key]) {
-                document.getElementById('userMissionText').innerText = missionText;
-                document.getElementById('generatedMissionText').innerText = generatedMissions[key];
-                document.getElementById('myModal').style.display = "block";
-            } else {
-                const prompt = `Por favor, redacta una misión para una empresa con el siguiente texto: "${missionText}". Quiero que el tono sea ${tone}.`;
-                try {
-                    const result = await model.generateContent(prompt);
-                    const response = await result.response;
-                    const generatedText = response.text();
+    if (!missionText.trim()) {
+        alert("Por favor, ingresa la misión de tu empresa.");
+        return;
+    }
 
-                    generatedMissions[key] = generatedText;
+    button.classList.add('disabled');
+    button.disabled = true;
 
-                    document.getElementById('userMissionText').innerText = missionText;
-                    document.getElementById('generatedMissionText').innerText = generatedText;
-                    document.getElementById('myModal').style.display = "block";
-                } catch (error) {
-                    console.error('Error al generar contenido:', error);
-                    document.getElementById('result').innerText = 'Error al generar respuesta.';
-                }
-            }
-        });
+    const key = `${missionText}-${tone}`;
+    if (generatedMissions[key]) {
+        mostrarModal(missionText, generatedMissions[key]);
+    } else {
+        const prompt = `Por favor, redacta una misión para una empresa con el siguiente texto: "${missionText}". Quiero que el tono sea ${tone}.`;
+        try {
+            const result = await model.generateContent(prompt);
+            const response = await result.response;
+            const generatedText = response.text();
+
+            generatedMissions[key] = generatedText;
+            mostrarModal(missionText, generatedText);
+        } catch (error) {
+            console.error('Error al generar contenido:', error);
+            document.getElementById('result').innerText = 'Error al generar respuesta.';
+        }
+    }
+
+    button.classList.remove('disabled');
+    button.disabled = false;
+});
+
+function mostrarModal(userText, generatedText) {
+    document.getElementById('userMissionText').innerText = userText;
+    document.getElementById('generatedMissionText').innerText = generatedText;
+    document.getElementById('myModal').style.display = "block";
+}
+
 
 
         document.getElementById('insertTextButton').onclick = function() {
@@ -167,7 +168,17 @@ $API_KEY = $config['API_KEY'];
         }
 
         document.getElementById('correctButton').addEventListener('click', async () => {
+            const button = document.getElementById('correctButton');
             const missionText = document.getElementById('mission').value;
+            
+            if (!missionText.trim()) {
+                alert("Por favor, ingresa la misión de tu empresa.");
+                return;
+            }
+
+            button.classList.add('disabled');
+            button.disabled = true;
+
             const prompt = `Por favor, corrige la ortografía del siguiente texto sin modificar el contenido: "${missionText}". Corrige solo tildes, mayúsculas, comas y puntos.`;
             try {
                 const result = await model.generateContent(prompt);
@@ -180,6 +191,9 @@ $API_KEY = $config['API_KEY'];
                 console.error('Error al corregir ortografía:', error);
                 document.getElementById('result').innerText = 'Error al corregir ortografía.';
             }
+
+            button.classList.remove('disabled');
+            button.disabled = false;
         });
 
         document.getElementById('saveButton').addEventListener('click', async (event) => {
@@ -197,11 +211,7 @@ $API_KEY = $config['API_KEY'];
             document.getElementById('myModal').style.display = "none";
         }
 
-        document.getElementById('acceptButton').onclick = function() {
-            document.getElementById('myModal').style.display = "none";
-        }
-
-        document.getElementById('editButton').onclick = function() {
+        document.getElementById('cancelButton').onclick = function() {
             document.getElementById('myModal').style.display = "none";
         }
 
