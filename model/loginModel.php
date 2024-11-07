@@ -44,9 +44,9 @@ class loginModel {
 
             $id = $this->PDO->lastInsertId();
             
-            $query1 = $this->PDO->prepare("INSERT INTO foda(id) VALUES(:id)");
-            $query1->bindParam(":id",$id);
-            $query1->execute();
+            $query0 = $this->PDO->prepare("INSERT INTO foda(id) VALUES(:id)");
+            $query0->bindParam(":id",$id);
+            $query0->execute();
 
             for($i=1; $i<6; $i++){
                 $producto = "Producto " . $i;
