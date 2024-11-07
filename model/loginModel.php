@@ -43,9 +43,16 @@ class loginModel {
 
 
             $id = $this->PDO->lastInsertId();
-            for($i=0; $i<5; $i++){
-                $query1 = $this->PDO->prepare("INSERT INTO prevision_ventas(id) VALUES(:id)");
+            
+            $query1 = $this->PDO->prepare("INSERT INTO foda(id) VALUES(:id)");
+            $query1->bindParam(":id",$id);
+            $query1->execute();
+
+            for($i=1; $i<6; $i++){
+                $producto = "Producto " . $i;
+                $query1 = $this->PDO->prepare("INSERT INTO prevision_ventas(id,producto) VALUES(:id,:producto)");
                 $query1->bindParam(":id",$id);
+                $query1->bindParam(":producto",$producto);
                 $query1->execute();
             }
             for($i=0; $i<25; $i++){
