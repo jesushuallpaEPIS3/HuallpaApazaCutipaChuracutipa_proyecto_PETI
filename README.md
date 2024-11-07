@@ -1,4 +1,4 @@
-
+REALSE 1.0V: https://github.com/jesushuallpaEPIS3/HuallpaApazaCutipaChuracutipa_proyecto_PETI/releases/tag/DESPLEGABLE
 
 # Proyecto PETI : Web para Planificación de TI
 
