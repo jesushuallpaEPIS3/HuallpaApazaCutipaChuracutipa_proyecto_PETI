@@ -31,7 +31,9 @@ function actualizarTbPrivisionVentas() {
     }
 }
 
-function mostarSimboloPorcentaje(){
+//version pasada de mostarSimboloPorcentaje()
+
+/* function mostarSimboloPorcentaje(){
     const tcm = document.getElementsByName("tcm");
     let suma;
     for (let i = 1; i <= 5; i++) {
@@ -52,8 +54,38 @@ function mostarSimboloPorcentaje(){
 
         tcm[i-1].innerText = (suma/5 < 20) ? suma/5 + "%" : "20%";
     }
-}
-
+} */
+    function mostarSimboloPorcentaje() {
+        const tcm = document.getElementsByName("tcm");
+    
+        for (let i = 1; i <= 5; i++) {
+            let suma = 0;
+            let producto = "producto" + i + "[]";
+            producto = document.getElementsByName(producto);
+    
+            for (let j = 0; j < producto.length; j++) {
+                if (producto[j].value !== "") {
+                    // Convertimos el valor a número, quitando el símbolo %
+                    let valorNumerico = parseFloat(producto[j].value.replace('%', ''));
+    
+                    // Limitamos el valor a 100 si es necesario
+                    if (valorNumerico > 100) {
+                        valorNumerico = 100;
+                    }
+    
+                    // Agregamos el símbolo de porcentaje solo si hay un valor numérico
+                    producto[j].value = valorNumerico ? valorNumerico + "%" : "";
+                    
+                    // Sumamos al total
+                    suma += valorNumerico;
+                }
+            }
+    
+            // Actualizamos el valor de tcm[i-1], con un máximo del 20%
+            tcm[i - 1].innerText = (suma / 5 < 20) ? (suma / 5) + "%" : "20%";
+        }
+    }
+    
 
 function simboloPorcentaje(){
     for (let i = 1; i <= 5; i++) {
