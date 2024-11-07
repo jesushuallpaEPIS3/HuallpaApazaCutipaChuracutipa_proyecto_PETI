@@ -18,6 +18,39 @@ Este repositorio contiene el proyecto **PETI**, el cual puedes desplegar utiliza
 
 Este proyecto es una página web que facilita la gestión de elementos clave como visión, misión, objetivos, cadena de valor, matriz FODA y valores organizacionales. Cada usuario puede crear una cuenta y agregar estos valores específicos para su propio perfil. 
 
+---
+
+### Requerimientos Funcionales
+
+| ID   | Requerimiento Funcional                                                                                       | Responsable        | Fecha de Cierre    |
+|------|---------------------------------------------------------------------------------------------------------------|--------------------|--------------------|
+| RF01 | Implementación de UI para Login                                                                               | @RicardoCutipa     | Hace 2 días       |
+| RF02 | Creación de Nuevo Usuario para Empresas                                                                       | @AlbertApaza       | Hace 3 días       |
+| RF03 | Creación de Captcha en Login                                                                                  | @AlbertApaza       | Hace 3 días       |
+| RF04 | Implementación de IA-Geminis para visión y misión                                                             | @AlbertApaza       | Hace 3 días y 3 semanas |
+| RF05 | Análisis Interno y Externo                                                                                    | @jesushuallpaEPIS3 | Hace 5 días       |
+| RF06 | Código para Análisis Interno y Externo                                                                        | @jesushuallpaEPIS3 | Hace 3 semanas    |
+| RF07 | Estructura del Análisis Interno Externo                                                                       | @jesushuallpaEPIS3 | Hace 3 semanas    |
+| RF08 | Conexión a la Base de Datos e Ingreso de Datos                                                                | @erick00xx         | Hace 3 semanas    |
+| RF09 | Comprobación de Inicio de Sesión                                                                              | @erick00xx         | Hace 3 semanas    |
+| RF10 | Información de Empresa                                                                                        | @AlbertApaza       | Hace 1 mes        |
+| RF11 | Resumen del Plan                                                                                              | @AlbertApaza       | Hace 1 mes        |
+| RF12 | Código Visión, Misión y Valores                                                                               | @jesushuallpaEPIS3, @RicardoCutipa, @erick00xx | Hace 3 semanas y 1 mes |
+| RF13 | Código Objetivos                                                                                              | @AlbertApaza       | Hace 1 mes        |
+
+---
+
+### Requerimientos No Funcionales
+
+| ID   | Requerimiento No Funcional                                                                                    | Responsable        | Fecha de Cierre    |
+|------|---------------------------------------------------------------------------------------------------------------|--------------------|--------------------|
+| RNF01 | Dockerización del Proyecto                                                                                   | @AlbertApaza       | Hace 2 días       |
+| RNF02 | Modificación del HOOK para Protección de la API Key                                                          | @AlbertApaza       | Hace 3 días       |
+| RNF03 | Estructuración del Proyecto usando el Modelo MVC                                                             | @erick00xx         | Hace 3 semanas    |
+| RNF04 | Actualización del README para Documentación                                                                  | @AlbertApaza       | Hace 3 semanas    |
+
+---
+
 
 
 
@@ -149,10 +182,6 @@ docker-compose down
 ```
 
 
-Para documentar las tareas terminadas en el README, puedes agregar una sección llamada **Historial de Tareas Completadas** o **Tareas Terminadas** con el formato de cada tarea, el responsable y la fecha de cierre. A continuación, te muestro cómo puedes estructurarlo:
-
----
-
 ### Tareas Terminadas
 
 | Tarea                                    | Asignado a         | Fecha de cierre   |
@@ -182,4 +211,3 @@ Para documentar las tareas terminadas en el README, puedes agregar una sección 
 
 ---
 
-Esta sección le da al lector del README un resumen claro de quién ha trabajado en cada tarea y cuándo se completó.
