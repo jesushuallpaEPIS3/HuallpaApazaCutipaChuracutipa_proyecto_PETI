@@ -1,6 +1,4 @@
-Aquí tienes el README con el contenido que pediste, adaptado para incluir todos los pasos detallados y la información adicional:
 
----
 
 # Proyecto PETI
 
