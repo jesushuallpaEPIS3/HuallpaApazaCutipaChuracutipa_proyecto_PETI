@@ -489,15 +489,16 @@ textarea, select {
     display: none;
 }
 
-.ai-button:active .button-text,
-.ai-button:active .sparkle-icon {
+.ai-button.disabled .button-text,
+.ai-button.disabled .sparkle-icon {
     display: none;
 }
 
-.ai-button:active .generating-text,
-.ai-button:active .spinner {
+.ai-button.disabled .generating-text,
+.ai-button.disabled .spinner {
     display: inline-flex;
 }
+
 
 .ellipsis {
     display: inline-block;
@@ -540,6 +541,142 @@ textarea, select {
 }
 
 .ai-button.disabled {
-    background-color: #cccccc; /* Color de botón desactivado */
-    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+/* Estilos para el overlay de carga */
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.loading-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.loading-content {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+/* Contenedor de partículas */
+.particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Estilos para las estrellas */
+.stars-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.star {
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+}
+
+.star-main {
+    animation: star-pulse 2s infinite;
+}
+
+.star-secondary {
+    font-size: 35px;
+    opacity: 0.9;
+    animation: star-pulse 2s infinite 0.2s;
+}
+
+.star-tertiary {
+    font-size: 30px;
+    opacity: 0.8;
+    animation: star-pulse 2s infinite 0.4s;
+}
+
+/* Texto de carga */
+.loading-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+    white-space: nowrap;
+    animation: fade-in 0.5s ease-out;
+}
+
+/* Animaciones */
+@keyframes star-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+@keyframes particle-float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(var(--tx), var(--ty)) scale(1.5);
+        opacity: 0.8;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Mantén los estilos existentes del botón y agrega estos nuevos */
+.ai-button.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.ai-button.loading .button-text,
+.ai-button.loading .sparkle-icon {
+    display: none;
+}
+
+.ai-button.loading .generating-text,
+.ai-button.loading .spinner {
+    display: inline-flex;
 }

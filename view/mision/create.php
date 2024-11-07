@@ -49,32 +49,50 @@ $API_KEY = $config['API_KEY'];
                     </select>
                     
                     <div class="button-container">
-                    <button type="button" id="generateButton" class="ai-button">
-                        <div class="button-background"></div>
-                        <div class="button-shimmer"></div>
-                        <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.813-1.912a2 2 0 001.272-1.272L12 3z"/>
-                        </svg>
-                        <span class="button-text">Consultar con IA</span>
-                        <span class="generating-text">Generando<span class="ellipsis">...</span></span>
-                        <div class="spinner"></div>
-                    </button>
-                    <button type="button" id="correctButton" class="ai-button">
-                        <div class="button-background"></div>
-                        <div class="button-shimmer"></div>
-                        <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.813-1.912a2 2 0 001.272-1.272L12 3z"/>
-                        </svg>
-                        <span class="button-text">Corregir Ortografía IA</span>
-                        <span class="generating-text">Corrigiendo<span class="ellipsis">...</span></span>
-                        <div class="spinner"></div>
-                    </button>
-                    <input type="submit" value="Guardar Misión" id="saveButton">
+                        <button type="button" id="generateButton" class="ai-button">
+                            <div class="button-background"></div>
+                            <div class="button-shimmer"></div>
+                            <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.813-1.912a2 2 0 001.272-1.272L12 3z"/>
+                            </svg>
+                            <span class="button-text">Consultar con IA</span>
+                            <span class="generating-text">Generando<span class="ellipsis">...</span></span>
+                            <div class="spinner"></div>
+                        </button>
+
+                        
+                        <button type="button" id="correctButton" class="ai-button">
+                            <div class="button-background"></div>
+                            <div class="button-shimmer"></div>
+                            <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.813-1.912a2 2 0 001.272-1.272L12 3z"/>
+                            </svg>
+                            <span class="button-text">Corregir Ortografía IA</span>
+                            <span class="generating-text">Corrigiendo<span class="ellipsis">...</span></span>
+                            <div class="spinner"></div>
+                        </button>
+                        <input type="submit" value="Guardar Misión" id="saveButton">
                     </div>
                 </form>
             </section>
             <div id="result"></div>
         </main>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="particles-container">
+            </div>
+            
+            <div class="stars-container">
+            <div class="star star-main">★</div>
+            <div class="star star-secondary">★</div>
+            <div class="star star-tertiary">★</div>
+            </div>
+            
+            <div class="loading-text">
+            Generando resultados...
+        </div>
     </div>
     
     <?php
@@ -118,46 +136,87 @@ $API_KEY = $config['API_KEY'];
 
         const generatedMissions = {};
 
-        document.getElementById('generateButton').addEventListener('click', async () => {
-    const button = document.getElementById('generateButton');
-    const missionText = document.getElementById('mission').value;
-    const tone = document.getElementById('tone').value;
 
-    if (!missionText.trim()) {
-        alert("Por favor, ingresa la misión de tu empresa.");
-        return;
-    }
-
-    button.classList.add('disabled');
-    button.disabled = true;
-
-    const key = `${missionText}-${tone}`;
-    if (generatedMissions[key]) {
-        mostrarModal(missionText, generatedMissions[key]);
-    } else {
-        const prompt = `Por favor, redacta una misión para una empresa con el siguiente texto: "${missionText}". Quiero que el tono sea ${tone}.`;
-        try {
-            const result = await model.generateContent(prompt);
-            const response = await result.response;
-            const generatedText = response.text();
-
-            generatedMissions[key] = generatedText;
-            mostrarModal(missionText, generatedText);
-        } catch (error) {
-            console.error('Error al generar contenido:', error);
-            document.getElementById('result').innerText = 'Error al generar respuesta.';
+        function createParticles() {
+            const container = document.querySelector('.particles-container');
+            container.innerHTML = '';
+            
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 2 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                const tx = (Math.random() - 0.5) * 100;
+                const ty = (Math.random() - 0.5) * 100;
+                particle.style.setProperty('--tx', `${tx}px`);
+                particle.style.setProperty('--ty', `${ty}px`);
+                
+                particle.style.animation = `particle-float ${2 + Math.random() * 2}s infinite`;
+                particle.style.animationDelay = `${Math.random() * 2}s`;
+                
+                container.appendChild(particle);
+            }
         }
-    }
 
-    button.classList.remove('disabled');
-    button.disabled = false;
-});
+        document.getElementById('generateButton').addEventListener('click', async () => {
+            const button = document.getElementById('generateButton');
+            const overlay = document.getElementById('loadingOverlay');
+            const missionText = document.getElementById('mission').value;
+            const tone = document.getElementById('tone').value;
 
-function mostrarModal(userText, generatedText) {
-    document.getElementById('userMissionText').innerText = userText;
-    document.getElementById('generatedMissionText').innerText = generatedText;
-    document.getElementById('myModal').style.display = "block";
-}
+            if (!missionText.trim()) {
+                alert("Por favor, ingresa la misión de tu empresa.");
+                return;
+            }
+
+            button.classList.add('loading');
+            overlay.classList.add('active');
+            createParticles();
+
+            const key = `${missionText}-${tone}`;
+            
+            try {
+                if (generatedMissions[key]) {
+                    mostrarModal(missionText, generatedMissions[key]);
+                } else {
+                    const prompt = `Por favor, redacta una misión para una empresa con el siguiente texto: "${missionText}". Quiero que el tono sea ${tone}.`;
+                    
+                    try {
+                        const result = await model.generateContent(prompt);
+                        const response = await result.response;
+                        const generatedText = response.text();
+
+                        generatedMissions[key] = generatedText;
+                        mostrarModal(missionText, generatedText);
+                    } catch (error) {
+                        console.error('Error al generar contenido:', error);
+                        document.getElementById('result').innerText = 'Error al generar respuesta.';
+                    }
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerText = 'Error al procesar la solicitud.';
+            } finally {
+                button.classList.remove('loading');
+                overlay.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', createParticles);
+
+        function mostrarModal(userText, generatedText) {
+            document.getElementById('userMissionText').innerText = userText;
+            document.getElementById('generatedMissionText').innerText = generatedText;
+            document.getElementById('myModal').style.display = "block";
+        }
 
 
 
@@ -220,6 +279,7 @@ function mostrarModal(userText, generatedText) {
                 document.getElementById('myModal').style.display = "none";
             }
         }
+
     </script>
 </body>
 </html>
