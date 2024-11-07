@@ -4,13 +4,17 @@
 
 Este repositorio contiene el proyecto **PETI**, el cual puedes desplegar utilizando Docker. A continuación, se detallan los pasos necesarios para clonar y ejecutar el proyecto en tu máquina local.
 
-## Integrantes del Proyecto
 
-- Albert Kenyi Apaza Ccalle
-- Ricardo Cutipa Gutierrez
-- Erick Churacutipa Blass
-- Jesus Huallpa Maron
-- **Curso:** PETI
+
+### Integrantes del Proyecto
+
+| Integrante                    | Código de Estudiante | Correo Electrónico                 | Rol o Función    |
+|-------------------------------|----------------------|------------------------------------|------------------|
+| Churacutipa Blas, Erick Scott | 2020067578          | ec2020067578@virtual.upt.pe       | Desarrollador    |
+| Cutipa Gutierrez, Ricardo Daniel | 2021069827      | rc2021069827@virtual.upt.pe       | Desarrollador    |
+| Huallpa Maron, Jesús Antonio  | 2021071085          | jh2021071085@virtual.upt.pe       | Desarrollador    |
+| Apaza Ccalle, Albert Kenyi    | 2021071075          | aa2021071075@virtual.upt.pe       | Desarrollador    |
+
 
 ## Descripción del Proyecto
 
