@@ -17,8 +17,9 @@
             header("Location:show.php");
         }
         public function guardarfoda($id,$f1,$f2,$d1,$d2){
-            $this->modelfoda->delete1($id);
-            $this->modelfoda->insertar1($id,$f1,$f2,$d1,$d2);
+            if($this->modelfoda->show1($id)){
+                $this->modelfoda->update1($id,$f1,$f2,$d1,$d2);
+            }else $this->modelfoda->insertar1($id,$f1,$f2,$d1,$d2);
         }
         public function verForm($id){
             return ($this->model->verForm($id)!=false) ? $this->model->verForm($id) : header("Location:create.php");

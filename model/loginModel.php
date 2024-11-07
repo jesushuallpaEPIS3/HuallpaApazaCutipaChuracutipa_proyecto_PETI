@@ -32,7 +32,6 @@ class loginModel {
             $query = $this->PDO->prepare("SELECT id FROM usuario WHERE username = :username");
             $query->bindParam(":username", $username);
             $query->execute();
-
             if ($query->rowCount() > 0) {
                 return false;
             }
@@ -40,8 +39,32 @@ class loginModel {
             $query = $this->PDO->prepare("INSERT INTO usuario (username, password) VALUES (:username, :password)");
             $query->bindParam(":username", $username);
             $query->bindParam(":password", $password);
-
             $query->execute();
+
+
+            $id = $this->PDO->lastInsertId();
+            for($i=0; $i<5; $i++){
+                $query1 = $this->PDO->prepare("INSERT INTO prevision_ventas(id) VALUES(:id)");
+                $query1->bindParam(":id",$id);
+                $query1->execute();
+            }
+            for($i=0; $i<25; $i++){
+                $query2 = $this->PDO->prepare("INSERT INTO tcm(id) VALUES(:id)");
+                $query2->bindParam(":id",$id);
+                $query2->execute();
+            }
+            for($i=0; $i<30; $i++){
+                $query3 = $this->PDO->prepare("INSERT INTO evo_demanda_global(id) VALUES(:id)");
+                $query3->bindParam(":id",$id);
+                $query3->execute();
+            }
+            for($i=0; $i<45; $i++){
+                $query4 = $this->PDO->prepare("INSERT INTO niv_venta_competidor(id) VALUES(:id)");
+                $query4->bindParam(":id",$id);
+                $query4->execute();
+            }
+
+
             return $this->PDO->lastInsertId();
         } catch (PDOException $e) {
             error_log("Error en la consulta de registro: " . $e->getMessage());
