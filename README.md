@@ -23,7 +23,7 @@ Este proyecto es una página web que facilita la gestión de elementos clave com
 
 
 
-### Tecnologías Utilizadas
+### Herramientas y Tecnologías Utilizadas
 
 [![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)](https://httpd.apache.org/)
 [![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
