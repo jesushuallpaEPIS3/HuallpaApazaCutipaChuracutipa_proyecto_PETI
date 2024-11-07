@@ -11,7 +11,6 @@
 ?>
 
     <title>MATRIZ PARTICIPACION</title>
-    <link rel="stylesheet" href="../head/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <script src="script.js" defer></script>
