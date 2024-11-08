@@ -151,47 +151,43 @@
                 </body>
                 </div>
                 <div class="column">
-                <?php
-                    require_once("../head/header.php");
-                    require_once("../../controller/ResumenController.php");
-                    $obj = new ResumenController();
-                    $date = $obj->show($_SESSION['user_id']);
-                ?>
-                <!DOCTYPE html>
-                <html lang="es">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Misión wasas de tu Empresa</title>
-                    <link rel="stylesheet" href="../head/styles.css">
-                    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-                </head>
+                    <?php
+                        require_once("../head/header.php");
+                        require_once("../../controller/ResumenController.php");
+                        $obj = new ResumenController();
+                        $date = $obj->show($_SESSION['user_id']);
+                    ?>
+                    <!DOCTYPE html>
+                    <html lang="es">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Misión wasas de tu Empresa</title>
+                        <link rel="stylesheet" href="../head/styles.css">
+
+                        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+                    </head>
                     <div class="wrapper">
-
-                            <section class="info-box">
-                                <header>
-                                    <h1>IDENTIFICACIÓN DE ESTRATEGIA </h1>
-                                </header>
-                                <p><?= $date['identificacion']?></p>
-                                <header>
-                                    <h1>CONCLUSIONES</h1>
-                                </header>
-                                <p><?= $date['conclusion'] ?></p>
-                                <a href="edit.php?id=<?= $date['id']?>" class="btn btn-secondary">Modificar</a>    
-                            </section>
-
+                        <header class="section-header">
+                            <h1>Identificación de Estrategia</h1>
+                        </header>
+                        <section class="info-box">
+                            <p class="content-text"><?= htmlspecialchars($date['identificacion']) ?></p>
+                        </section>
+                        <header class="section-header">
+                            <h1>Conclusiones</h1>
+                        </header>
+                        <section class="info-box">
+                            <p class="content-text"><?= htmlspecialchars($date['conclusion']) ?></p>
+                            <a href="edit.php?id=<?= htmlspecialchars($date['id']) ?>" class="btn btn-secondary">Modificar</a>
+                        </section>
                     </div>
-
-                <?php
-                    require_once("../head/footer.php");
-                ?>
-
-
+                </div>
             </div>
         </main>
     </div>
-    
     <?php require_once("../head/footer.php"); ?>
 </body>
 </html>
+
 
