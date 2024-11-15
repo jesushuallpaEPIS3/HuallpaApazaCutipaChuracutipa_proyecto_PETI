@@ -183,11 +183,12 @@
                         </section>
                     </div>
                 </div>
+                    <td>
+                        <a href="generar.php?id=<?= htmlspecialchars($date['id']) ?>">Generar PDF</a>
+                    </td>
             </div>
         </main>
     </div>
     <?php require_once("../head/footer.php"); ?>
 </body>
 </html>
-
-
