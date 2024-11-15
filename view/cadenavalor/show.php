@@ -23,6 +23,7 @@
             <section class="form-container"> -->
 
             <?php 
+            $suma = 0;
             $enunciados = [
                 "1. La empresa tiene una política sistematizada de cero defectos en la producción de productos/servicios.",
                 "2. La empresa emplea los medios productivos tecnológicamente más avanzados de su sector.",
@@ -69,6 +70,7 @@
                 <tbody>
                     <?php
                         for($i=0; $i<count($enunciados); $i++){?>
+                            <?php $suma = $suma + $date[$i]['punto']; ?>
                             <tr>
                                 <td><?= $enunciados[$i] ?></td>
                                 <?php
@@ -79,6 +81,10 @@
                             </tr>
                         <?php } 
                     ?>
+                    <tr>
+                        <td>POTENCIAL DE MEJORA DE LA CADENA DE VALOR</td>
+                        <td colspan="5" name="resultado"><?= (1-($suma/100)) * 100 . "%"  ?></td>
+                    </tr>
 
 
                 </tbody>

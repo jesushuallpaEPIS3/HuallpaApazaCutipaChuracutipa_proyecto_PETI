@@ -192,5 +192,3 @@
     <?php require_once("../head/footer.php"); ?>
 </body>
 </html>
-
-
