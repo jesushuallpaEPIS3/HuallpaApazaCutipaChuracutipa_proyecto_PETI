@@ -14,7 +14,11 @@
         <main>
             <section class="info-box">
                 <h2>10. IDENTIFICACIÓN DE ESTRATEGIAS </h2>
-            
+                <p>
+                Tras el análisis realizado habiéndose identificado las oportunidades, amenazas, fortalezas y debilidades, es momento de identificar la estrategia que debe seguir en su empresa para el logro de sus objetivos empresariales.
+                Se trata de realizar una Matriz Cruzada tal y como se refleja en el siguente dibujo para identificar la estrategía más conveniente a llevar a cabo.  
+                </p>
+                <img src="../../images/idestrategia.png" alt="sda">
             <!-- </section>
             <section class="form-container"> -->
 
