@@ -196,7 +196,7 @@
             <button class="button" data-number="9" onclick="location.href='view/pest/create.php'">Análisis PEST</button>
             
             <button class="button" data-number="10" onclick="location.href='view/idestrategia/create.php'">Identificación de Estrategia</button>
-            <button class="button" data-number="11" onclick="location.href='matriz_came/matriz_came.php'">Matriz CAME</button>
+            <button class="button" data-number="11" onclick="location.href='view/matrizca/create.php'">Matriz CAME</button>
         </div>
         <br>
         <button class="button-large" onclick="location.href='view/resumen/verify.php'">Resumen</button>
