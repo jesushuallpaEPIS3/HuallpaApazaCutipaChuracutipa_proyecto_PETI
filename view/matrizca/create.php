@@ -10,11 +10,12 @@
     <div class="wrapper">
         <header>
             <h1>CADENA DE VALOR</h1>
+            
         </header>
         <main>
             <section class="info-box">
                 <h2>10. IDENTIFICACIÓN DE ESTRATEGIAS </h2>
-            
+                <p>Para finalizar de elaborar un Plan Estratégico, además de tener identificada la estrategia es necesario determinar acciones que permitan corregir las debilidades, afrontar las amenazas, mantener las fortalezas y explotar las oportunidades. </p>
             <!-- </section>
             <section class="form-container"> -->
 
@@ -50,19 +51,19 @@
                 <tbody>
                     <tr>
                         <td rowspan="4">A</td>
-                        <td>1</td>
+                        <td>5</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <td>6</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <td>7</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>4</td>
+                        <td>8</td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -74,19 +75,19 @@
                 <tbody>
                     <tr>
                         <td rowspan="4">M</td>
-                        <td>1</td>
+                        <td>9</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <td>10</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <td>11</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>4</td>
+                        <td>12</td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -98,19 +99,19 @@
                 <tbody>
                     <tr>
                         <td rowspan="4">E</td>
-                        <td>1</td>
+                        <td>13</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <td>14</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <td>15</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>4</td>
+                        <td>16</td>
                         <td></td>
                     </tr>
                 </tbody>
