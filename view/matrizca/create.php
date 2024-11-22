@@ -14,7 +14,7 @@
         </header>
         <main>
             <section class="info-box">
-                <h2>10. IDENTIFICACIÓN DE ESTRATEGIAS </h2>
+                <h2>11. MATRIZ CAME </h2>
                 <p>Para finalizar de elaborar un Plan Estratégico, además de tener identificada la estrategia es necesario determinar acciones que permitan corregir las debilidades, afrontar las amenazas, mantener las fortalezas y explotar las oportunidades. </p>
             <!-- </section>
             <section class="form-container"> -->
