@@ -9,11 +9,14 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>CADENA DE VALOR</h1>
+            <h1>PEST</h1>
         </header>
         <main>
             <section class="info-box">
-                <h2>tablita</h2>
+            <h2>9. ANÁLISIS EXTERNO MACROENTORNO: PEST </h2>
+                <p>
+                A continuación complete el siguiente formulario para valorar su empresa en función de cada una de las afirmaciones, de tal forma que 0= En total en desacuerdo; 1= No está de acuerdo; 2= Está de acuerdo; 3= Está bastante de acuerdo; 4= En total acuerdo.
+                </p>
             
             <!-- </section>
             <section class="form-container"> -->

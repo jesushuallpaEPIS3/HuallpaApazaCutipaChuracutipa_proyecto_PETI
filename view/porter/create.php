@@ -9,12 +9,15 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>CADENA DE VALOR</h1>
+            <h1>MATRIZ DE PORTER</h1>
         </header>
         <main>
             <section class="info-box">
-                <h2>tablita</h2>
-            
+                <h2>8. ANALISIS EXTERNO MICROENTORNO: MATRIZ DE PORTER</h2>
+                <p>
+                El Modelo de las 5 Fuerzas de Porter estudia un determinado negocio en función de la amenaza de nuevos competidores y productos sustituivos, así como el poder de negociación de los proveedores y clientes, teniendo en cuenta el grado de competencia del sector. Esto proporciona una clara imagen de la situación competitiva de un mercado en concreto. El conjunto de las cinco fuerzas determina la intensidad competitiva, la rentabilidad del sector y, de forma derivada, las posibilidades futuras de éste. Por ejemplo, si un sector está obteniendo rendimientos escasos, es dudoso que disponga de recursos para financiar el desarrollo de productos sustitutivos dentro del mismo sector.
+                </p>
+                <img src="../../images/porter.png" alt="">
             <form method="post" action="store.php">
 
             <table border ="1">
