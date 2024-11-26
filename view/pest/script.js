@@ -1,33 +1,29 @@
-var myBarChart;  // Variable global para almacenar la referencia del gráfico
+var myBarChart; 
 
 function actualizarGrafico(datos) {
-    // Si el gráfico ya existe, destrúyelo antes de crear uno nuevo
     if (myBarChart) {
         myBarChart.destroy();
     }
 
-    // Colores diferentes para cada barra
     var colores = [
-        'rgba(54, 162, 235, 0.6)',  // Azul
-        'rgba(255, 99, 132, 0.6)',  // Rojo
-        'rgba(255, 159, 64, 0.6)',  // Naranja
-        'rgba(75, 192, 192, 0.6)',  // Verde
-        'rgba(153, 102, 255, 0.6)'  // Morado
+        'rgba(54, 162, 235, 0.6)',  
+        'rgba(255, 99, 132, 0.6)',  
+        'rgba(255, 159, 64, 0.6)',  
+        'rgba(75, 192, 192, 0.6)',  
+        'rgba(153, 102, 255, 0.6)' 
     ];
 
-    // Obtener el contexto del canvas donde se dibujará el gráfico
     var ctx = document.getElementById('myBarChart').getContext('2d');
 
-    // Crear el gráfico de barras
     myBarChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['FACTORES SOCIALES Y DEMOGRÁFICOS', 'FACTORES POLÍTICOS', 'FACTORES ECONÓMICOS', 'FACTORES TECNOLÓGICOS', 'FACTORES MEDIO AMBIENTALES'], // Etiquetas de los grupos
+            labels: ['FACTORES SOCIALES Y DEMOGRÁFICOS', 'FACTORES POLÍTICOS', 'FACTORES ECONÓMICOS', 'FACTORES TECNOLÓGICOS', 'FACTORES MEDIO AMBIENTALES'],
             datasets: [{
                 label: 'Puntuaciones',
-                data: datos, // Datos de las sumas de cada grupo
-                backgroundColor: colores, // Colores de las barras
-                borderColor: colores,     // Color del borde de las barras
+                data: datos,
+                backgroundColor: colores, 
+                borderColor: colores,   
                 borderWidth: 1
             }]
         },
@@ -37,75 +33,35 @@ function actualizarGrafico(datos) {
                 x: {
                     title: {
                         display: true,
-                        text: 'Tipología de factores generales externos'  // Título para el eje X
+                        text: 'Tipología de factores generales externos'  
                     }
                 },
                 y: {
                     title: {
                         display: true,
-                        text: 'Nivel de Impacto de factores generales externos'  // Título para el eje Y
+                        text: 'Nivel de Impacto de factores generales externos' 
                     },
-                    beginAtZero: true // Asegura que el eje Y comienza desde 0
+                    beginAtZero: true 
                 }
             },
             plugins: {
                 datalabels: {
-                    anchor: 'end',  // Posiciona el texto en el final de la barra
-                    align: 'top',   // Alinea el texto arriba de la barra
-                    color: 'black', // Color del texto
+                    anchor: 'end', 
+                    align: 'top',   
+                    color: 'black', 
                     font: {
                         weight: 'bold',
                         size: 14
                     },
                     formatter: function(value) {
-                        return value;  // Muestra el valor numérico de cada barra
+                        return value; 
                     }
                 }
             }
         },
-        plugins: [ChartDataLabels]  // Asegúrate de que el plugin ChartDataLabels esté cargado
+        plugins: [ChartDataLabels]  
     });
 }
-
-function actualizarGrafico2(datos) {
-    // Colores para cada barra
-    var colores = ['rgba(54, 162, 235, 0.6)',  // Azul
-                   'rgba(255, 99, 132, 0.6)',  // Rojo
-                   'rgba(255, 159, 64, 0.6)',  // Naranja
-                   'rgba(75, 192, 192, 0.6)',  // Verde
-                   'rgba(153, 102, 255, 0.6)']; // Morado
-
-    var data = [{
-        x: ['Grupo 1', 'Grupo 2', 'Grupo 3', 'Grupo 4', 'Grupo 5'],
-        y: datos,
-        type: 'bar',
-        marker: {
-            color: colores  // Asigna los colores a cada barra
-        },
-        text: datos,  // Muestra los valores numéricos de cada barra
-        textposition: 'outside',  // Posiciona el texto fuera de las barras, encima
-        hoverinfo: 'y',  // Muestra el valor al pasar el mouse sobre la barra
-    }];
-    
-    // Configuración del layout
-    var layout = {
-        title: 'Puntuaciones por Grupo',
-        showlegend: false,
-        xaxis: {
-            title: 'Grupos'
-        },
-        yaxis: {
-            title: 'Puntuación Total'
-        },
-        plot_bgcolor: '#f2f2f2',  // Color de fondo de la gráfica
-        paper_bgcolor: '#ffffff',  // Color de fondo de todo el gráfico
-    };
-
-    // Crear el gráfico
-    Plotly.newPlot('bar-chart', data, layout);
-}
-
-
 
 function generarConclusiones() {
     const puntos = document.querySelectorAll('input[name^="puntos["]');
@@ -159,7 +115,6 @@ function generarConclusiones() {
 
     (grupo5>=70) ? conclusion[4].innerText = "HAY UN NOTABLE IMPACTO DEL FACTOR MEDIO AMBIENTAL EN EL FUNCIONAMIENTO DE LA EMPRESA" : conclusion[4].innerText = "NO HAY UN NOTABLE IMPACTO DEL FACTOR MEDIO AMBIENTAL EN EL FUNCIONAMIENTO DE LA EMPRESA";
     actualizarGrafico([grupo1,grupo2,grupo3,grupo4,grupo5]);
-    //actualizarGrafico2([grupo1,grupo2,grupo3,grupo4,grupo5]);
 }
 
 function cargarPagina() {
