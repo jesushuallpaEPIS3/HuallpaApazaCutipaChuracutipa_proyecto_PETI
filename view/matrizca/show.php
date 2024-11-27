@@ -1,5 +1,9 @@
 <?php
     require_once("../head/header.php");
+    require_once("../../controller/matrizcaController.php");
+    $obj = new matrizcaController();
+
+    $date = $obj->show($_SESSION['user_id']);
 ?>
 
     <title>Objetivos de tu Empresa</title>
@@ -29,19 +33,19 @@
                     <tr>
                         <td rowspan="4">C</td>
                         <td>1</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[0][1]?>"></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[1][1]?>"></td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[2][1]?>"></td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[3][1]?>"></td>
                     </tr>
                 </tbody>
             </table>
@@ -54,19 +58,19 @@
                     <tr>
                         <td rowspan="4">A</td>
                         <td>5</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[4][1]?>"></td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[5][1]?>"></td>
                     </tr>
                     <tr>
                         <td>7</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[6][1]?>"></td>
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[7][1]?>"></td>
                     </tr>
                 </tbody>
             </table>
@@ -78,19 +82,19 @@
                     <tr>
                         <td rowspan="4">M</td>
                         <td>9</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[8][1]?>"></td>
                     </tr>
                     <tr>
                         <td>10</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[9][1]?>"></td>
                     </tr>
                     <tr>
                         <td>11</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[10][1]?>"></td>
                     </tr>
                     <tr>
                         <td>12</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[11][1]?>"></td>
                     </tr>
                 </tbody>
             </table>
@@ -102,19 +106,19 @@
                     <tr>
                         <td rowspan="4">E</td>
                         <td>13</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[12][1]?>"></td>
                     </tr>
                     <tr>
                         <td>14</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[13][1]?>"></td>
                     </tr>
                     <tr>
                         <td>15</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[14][1]?>"></td>
                     </tr>
                     <tr>
                         <td>16</td>
-                        <td><input type="text" name="came[]" value=" "></td>
+                        <td><input type="text" name="came[]" value="<?=$date[15][1]?>"></td>
                     </tr>
                 </tbody>
             </table>
