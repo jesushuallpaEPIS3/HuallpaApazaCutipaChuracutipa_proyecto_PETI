@@ -18,6 +18,8 @@
                 <p>Para finalizar de elaborar un Plan Estratégico, además de tener identificada la estrategia es necesario determinar acciones que permitan corregir las debilidades, afrontar las amenazas, mantener las fortalezas y explotar las oportunidades. </p>
             <!-- </section>
             <section class="form-container"> -->
+<form method="POST" action="store.php">
+
 
             <table border="1">
                     <td></td>
@@ -27,19 +29,19 @@
                     <tr>
                         <td rowspan="4">C</td>
                         <td>1</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                 </tbody>
             </table>
@@ -52,19 +54,19 @@
                     <tr>
                         <td rowspan="4">A</td>
                         <td>5</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>7</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                 </tbody>
             </table>
@@ -76,19 +78,19 @@
                     <tr>
                         <td rowspan="4">M</td>
                         <td>9</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>10</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>11</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>12</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                 </tbody>
             </table>
@@ -100,23 +102,23 @@
                     <tr>
                         <td rowspan="4">E</td>
                         <td>13</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>14</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>15</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                     <tr>
                         <td>16</td>
-                        <td></td>
+                        <td><input type="text" name="came[]"></td>
                     </tr>
                 </tbody>
             </table>
-            
+            </form>       
 
 
             </section>
