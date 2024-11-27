@@ -249,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `foda2` (
   `a4` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.foda2: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla peti.foda2: ~0 rows (aproximadamente)
 INSERT INTO `foda2` (`id`, `o1`, `o2`, `o3`, `o4`, `a1`, `a2`, `a3`, `a4`) VALUES
 	(445567, 'oportunidad 1', 'oportunidad 2', 'oportunidad 3', 'oportunidad 4', 'amenaza 1', 'amenaza 2', 'amenaza 3', 'amenaza 4');
 
@@ -264,6 +264,14 @@ CREATE TABLE IF NOT EXISTS `informacion` (
 INSERT INTO `informacion` (`id`, `nombre`, `descripcion`) VALUES
 	(445567, 'EcoInnovar', 'EcoInnovar es una empresa dedicada al desarrollo y la implementación de soluciones tecnológicas sostenibles que promueven el cuidado del medio ambiente. Ofrecemos productos y servicios que ayudan a reducir la huella de carbono y fomentan un estilo de vida más ecológico.'),
 	(445570, 'EcoTech Solutions', 'EcoTech Solutions es una empresa innovadora que se dedica al desarrollo, fabricación y distribución de productos tecnológicos sostenibles. Su enfoque está en crear soluciones inteligentes que no solo mejoren la vida de las personas, sino que también promuevan la sostenibilidad y el cuidado del medio ambiente. Desde dispositivos electrónicos con bajo impacto ambiental hasta soluciones energéticas renovables para hogares y empresas, EcoTech busca transformar la manera en que interactuamos con la tecnología, asegurando un futuro más verde y responsable.');
+
+-- Volcando estructura para tabla peti.matrizca
+CREATE TABLE IF NOT EXISTS `matrizca` (
+  `id` int(11) DEFAULT NULL,
+  `valores` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Volcando datos para la tabla peti.matrizca: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla peti.mision
 CREATE TABLE IF NOT EXISTS `mision` (
@@ -471,7 +479,7 @@ CREATE TABLE IF NOT EXISTS `pest` (
 
 -- Volcando datos para la tabla peti.pest: ~25 rows (aproximadamente)
 INSERT INTO `pest` (`id`, `enunciado`, `punto`) VALUES
-	(445567, 1, 0),
+	(445567, 1, 1),
 	(445567, 2, 0),
 	(445567, 3, 0),
 	(445567, 4, 0),
