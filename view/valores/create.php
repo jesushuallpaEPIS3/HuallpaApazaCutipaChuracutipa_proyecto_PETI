@@ -86,7 +86,7 @@
             </section>
         </main>
     </div>
-    <?php
+    <?php 
     require_once("../head/footer.php");
 ?>
 </body>
