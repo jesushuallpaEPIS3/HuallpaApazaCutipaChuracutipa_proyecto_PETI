@@ -192,11 +192,11 @@
             <button class="button" data-number="5" onclick="location.href='view/analisis/verify.php'">Análisis Interno y Externo</button>
             <button class="button" data-number="6" onclick="location.href='view/cadenavalor/verify.php'">Cadena de Valor</button>
             <button class="button" data-number="7" onclick="location.href='view/matrizpa/show.php'">Matriz de Participación</button>
-            <button class="button" data-number="8" onclick="location.href='view/porter/create.php'">Fuerzas de Porter</button>
-            <button class="button" data-number="9" onclick="location.href='view/pest/create.php'">Análisis PEST</button>
+            <button class="button" data-number="8" onclick="location.href='view/porter/verify.php'">Fuerzas de Porter</button>
+            <button class="button" data-number="9" onclick="location.href='view/pest/verify.php'">Análisis PEST</button>
             
             <button class="button" data-number="10" onclick="location.href='view/idestrategia/create.php'">Identificación de Estrategia</button>
-            <button class="button" data-number="11" onclick="location.href='view/matrizca/create.php'">Matriz CAME</button>
+            <button class="button" data-number="11" onclick="location.href='view/matrizca/verify.php'">Matriz CAME</button>
         </div>
         <br>
         <button class="button-large" onclick="location.href='view/resumen/verify.php'">Resumen</button>

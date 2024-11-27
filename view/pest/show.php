@@ -1,28 +1,35 @@
 <?php
     require_once("../head/header.php");
+    require_once("../../controller/pestController.php");
+    $obj = new pestController();
+    $date = $obj->verForm($_SESSION['user_id']);
+    $foda = $obj->verfoda2($_SESSION['user_id']);
 ?>
 
     <title>Objetivos de tu Empresa</title>
     <link rel="stylesheet" href="../head/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script src="script.js" defer></script>
 <body>
     <div class="wrapper">
         <header>
-            <h1>PEST</h1>
+            <h1>9. ANÁLISIS EXTERNO MACROENTORNO: PEST</h1>
         </header>
         <main>
             <section class="info-box">
-            <h2>9. ANÁLISIS EXTERNO MACROENTORNO: PEST </h2>
-                <p>
-                A continuación complete el siguiente formulario para valorar su empresa en función de cada una de las afirmaciones, de tal forma que 0= En total en desacuerdo; 1= No está de acuerdo; 2= Está de acuerdo; 3= Está bastante de acuerdo; 4= En total acuerdo.
-                </p>
-            
+                <h2>PEST</h2>
+                <!-- <div id="bar-chart" style="width:600px;height:400px;"></div> -->
+                <canvas id="myBarChart" width="400" height="200"></canvas>            
             <!-- </section>
             <section class="form-container"> -->
 
             <?php 
-            $enunciados = [
+            $suma = 0;
+           $enunciados = [
                 "1. Los cambios en la composición étnica de los consumidores de nuestro mercado están teniendo un notable impacto.",
                 "2. El envejecimiento de la población tiene un importante impacto en la demanda.",
                 "3. Los nuevos estilos de vida y tendencias originan cambios en la oferta de nuestro sector.",
@@ -51,8 +58,8 @@
             ];
             ?>
             <form method="post" action="store.php">
-            <table border="1">
-                    <tr>
+            <table border="1" oninput="generarConclusiones(); maxVentaCp();">
+                <tr>
                         <th rowspan="3">AUTODIAGNÓSTICO ENTORNO GLOBAL P.E.S.T.</tthd>
                         <th colspan="5">Valoracion</th>
                     </tr>
@@ -73,15 +80,22 @@
                 <tbody>
                     <?php
                         for($i=0; $i<count($enunciados); $i++){?>
+                            <?php $suma = $suma + $date[$i]['punto']; ?>
                             <tr>
                                 <td><?= $enunciados[$i] ?></td>
                                 <?php
-                                    for($j=1; $j<=5 ; $j++){ ?>
-                                        <td><input type="radio" name="puntos[<?= $i+1?>]" value="<?= $j ?>" required></td>
+                                    for($j=0; $j<=4 ; $j++){ ?>
+                                        <?php $checked = ($date[$i]['punto'] == $j) ? "checked" : "" ?>
+                                        <td><input type="radio" name="puntos[<?= $i+1?>]" value="<?= $j ?>" required <?= $checked ?> ></td>
                                     <?php }?>
                             </tr>
                         <?php } 
                     ?>
+                    <tr><td colspan="6" name="conclu">CONCLUSIONES</td></tr>
+                    <tr><td colspan="6" name="conclu">CONCLUSIONES</td></tr>
+                    <tr><td colspan="6" name="conclu">CONCLUSIONES</td></tr>
+                    <tr><td colspan="6" name="conclu">CONCLUSIONES</td></tr>
+                    <tr><td colspan="6" name="conclu">CONCLUSIONES</td></tr>
 
 
                 </tbody>
@@ -89,44 +103,40 @@
             </table>
 
             <br>
-                                    
-            <!-- FODA -->
-
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2">OPORTUNIDADES</th>
+                        <th colspan="2">Fortalezas</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>O3</td>
-                        <td><input type="text" name="o3" required></td>
+                        <td><input type="text" name="o3" value="<?= $foda['o3'] ?>" required></td>
                     </tr>
                     <tr>
-                        <td>O4</td>
-                        <td><input type="text" name="o4" required></td>
+                        <td>O2</td>
+                        <td><input type="text" name="o4" value="<?= $foda['o4'] ?>" required></td>
                     </tr>
                 </tbody>
             </table>
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2">AMENAZAS</th>
+                        <th colspan="2">Debilidades</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>A3</td>
-                        <td><input type="text" name="a3" required></td>
+                        <td><input type="text" name="a3" value="<?= $foda['a3'] ?>" required></td>
                     </tr>
                     <tr>
                         <td>A4</td>
-                        <td><input type="text" name="a4" required></td>
+                        <td><input type="text" name="a4" value="<?= $foda['a4'] ?>" required></td>
                     </tr>
                 </tbody>
             </table>
-
             <input type="submit" class="btn btn-primary" value="Enviar">
         </form>
 

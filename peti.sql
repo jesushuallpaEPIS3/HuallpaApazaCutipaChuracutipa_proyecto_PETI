@@ -236,6 +236,23 @@ INSERT INTO `foda` (`id`, `f1`, `f2`, `f3`, `f4`, `d1`, `d2`, `d3`, `d4`) VALUES
 	(445569, 'asdasd', 'asdasd', NULL, NULL, 'asda', 'asd', NULL, NULL),
 	(445570, 'Innovación constante: Desarrollo de productos tecnológicos sostenibles con alta eficiencia energética.', 'Compromiso con el medio ambiente: El enfoque ecológico y el uso de materiales reciclables y de bajo impacto ambiental.', 'Innovación constante: EcoVerde se mantiene a la vanguardia en el desarrollo de nuevos productos ecológicos, adaptándose rápidamente a las tendencias y necesidades del mercado.', 'Compromiso con la sostenibilidad: Su modelo de negocio está completamente alineado con los principios de economía circular, lo que le otorga una ventaja competitiva en un mercado cada vez más consciente de la necesidad de proteger el medio ambiente.', 'Altos costos de producción iniciales: La implementación de tecnologías sostenibles y el uso de materiales ecológicos pueden resultar más caros al principio, lo que puede afectar la rentabilidad.', 'Dependencia de proveedores de materiales específicos: La disponibilidad y costo de materiales ecológicos pueden ser variables.', 'Altos costos de producción: El uso de materiales ecológicos y tecnologías limpias puede incrementar los costos en comparación con productos convencionales, lo que podría limitar el margen de beneficio.', 'Riesgos logísticos: El proceso de producción de productos ecológicos puede ser más complejo y requerir una cadena de suministro más eficiente, lo cual presenta desafíos logísticos.');
 
+-- Volcando estructura para tabla peti.foda2
+CREATE TABLE IF NOT EXISTS `foda2` (
+  `id` int(11) DEFAULT NULL,
+  `o1` text DEFAULT NULL,
+  `o2` text DEFAULT NULL,
+  `o3` text DEFAULT NULL,
+  `o4` text DEFAULT NULL,
+  `a1` text DEFAULT NULL,
+  `a2` text DEFAULT NULL,
+  `a3` text DEFAULT NULL,
+  `a4` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Volcando datos para la tabla peti.foda2: ~1 rows (aproximadamente)
+INSERT INTO `foda2` (`id`, `o1`, `o2`, `o3`, `o4`, `a1`, `a2`, `a3`, `a4`) VALUES
+	(445567, 'oportunidad 1', 'oportunidad 2', 'oportunidad 3', 'oportunidad 4', 'amenaza 1', 'amenaza 2', 'amenaza 3', 'amenaza 4');
+
 -- Volcando estructura para tabla peti.informacion
 CREATE TABLE IF NOT EXISTS `informacion` (
   `id` int(11) DEFAULT NULL,
@@ -254,7 +271,7 @@ CREATE TABLE IF NOT EXISTS `mision` (
   `mision` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.mision: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla peti.mision: ~3 rows (aproximadamente)
 INSERT INTO `mision` (`id`, `mision`) VALUES
 	(445567, 'En EcoSolutions, nos comprometemos a ofrecer soluciones sostenibles e innovadoras que promuevan un futuro más limpio y saludable. Nuestra misión es empoderar a las comunidades a través de productos ecológicos y servicios que reduzcan el impacto ambiental, fomenten la economía circular y mejoren la calidad de vida. Trabajamos con pasión y dedicación para inspirar un cambio positivo en el mundo, promoviendo la conciencia ambiental y la responsabilidad social.'),
 	(445569, 'Proveer acceso sostenible a agua de calidad, garantizando su disponibilidad para las generaciones presentes y futuras.\r\n'),
@@ -444,6 +461,68 @@ INSERT INTO `obj_especificos` (`id_objetivo`, `descripcionEspObj`) VALUES
 	(2, 'Formar alianzas estratégicas con al menos tres distribuidores internacionales especializados en productos sostenibles para finales del próximo año.'),
 	(3, 'Implementar una campaña de marketing digital y eventos educativos que llegue a al menos 100,000 personas dentro de los próximos 6 meses.'),
 	(3, 'Ofrecer talleres o webinars mensuales sobre tecnología sostenible y eficiencia energética a empresas y consumidores, con el objetivo de capacitar a al menos 500 personas al final del próximo trimestre.');
+
+-- Volcando estructura para tabla peti.pest
+CREATE TABLE IF NOT EXISTS `pest` (
+  `id` int(11) DEFAULT NULL,
+  `enunciado` int(11) DEFAULT NULL,
+  `punto` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Volcando datos para la tabla peti.pest: ~25 rows (aproximadamente)
+INSERT INTO `pest` (`id`, `enunciado`, `punto`) VALUES
+	(445567, 1, 0),
+	(445567, 2, 0),
+	(445567, 3, 0),
+	(445567, 4, 0),
+	(445567, 5, 0),
+	(445567, 6, 3),
+	(445567, 7, 4),
+	(445567, 8, 3),
+	(445567, 9, 3),
+	(445567, 10, 4),
+	(445567, 11, 4),
+	(445567, 12, 2),
+	(445567, 13, 1),
+	(445567, 14, 0),
+	(445567, 15, 0),
+	(445567, 16, 4),
+	(445567, 17, 2),
+	(445567, 18, 4),
+	(445567, 19, 2),
+	(445567, 20, 1),
+	(445567, 21, 2),
+	(445567, 22, 3),
+	(445567, 23, 1),
+	(445567, 24, 1),
+	(445567, 25, 2);
+
+-- Volcando estructura para tabla peti.porter
+CREATE TABLE IF NOT EXISTS `porter` (
+  `id` int(11) DEFAULT NULL,
+  `enunciado` int(11) DEFAULT NULL,
+  `punto` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Volcando datos para la tabla peti.porter: ~17 rows (aproximadamente)
+INSERT INTO `porter` (`id`, `enunciado`, `punto`) VALUES
+	(445567, 1, 1),
+	(445567, 2, 2),
+	(445567, 3, 2),
+	(445567, 4, 2),
+	(445567, 5, 4),
+	(445567, 6, 1),
+	(445567, 7, 1),
+	(445567, 8, 1),
+	(445567, 9, 1),
+	(445567, 10, 1),
+	(445567, 11, 1),
+	(445567, 12, 1),
+	(445567, 13, 1),
+	(445567, 14, 1),
+	(445567, 15, 1),
+	(445567, 16, 1),
+	(445567, 17, 1);
 
 -- Volcando estructura para tabla peti.prevision_ventas
 CREATE TABLE IF NOT EXISTS `prevision_ventas` (
