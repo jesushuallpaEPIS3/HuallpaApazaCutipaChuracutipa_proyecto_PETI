@@ -1,5 +1,9 @@
 <?php
     require_once("../head/header.php");
+    require_once("../../controller/idestrategiaController.php");
+    $obj = new idestrategiaController();
+    //$date = $obj->verForm($_SESSION['user_id']);
+    $foda = $obj->verfodaAll($_SESSION['user_id']);
 ?>
 
     <title>Objetivos de tu Empresa</title>
@@ -25,55 +29,55 @@
             <table border="1">
                 <tr>
                     <td rowspan="4">DEBILIDADES</td>
-                    <td></td>
+                    <td><?=$foda['d1']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['d2']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['d3']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['d4']?></td>
                 </tr>
                 <tr>
                     <td rowspan="4">AMENAZAS</td>
-                    <td></td>
+                    <td><?=$foda['a1']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['a2']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['a3']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['a4']?></td>
                 </tr>
                 <tr>
                     <td rowspan="4">FORTALEZAS</td>
-                    <td></td>
+                    <td><?=$foda['f1']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['f2']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['f3']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['f4']?></td>
                 </tr>
                 <tr>
                     <td rowspan="4">OPORTUNIDADES</td>
-                    <td></td>
+                    <td><?=$foda['o1']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['o2']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['o3']?></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><?=$foda['o4']?></td>
                 </tr>
             </table>
 
@@ -126,6 +130,8 @@
                     <td>0</td>
                 </tr>
             </table>
+
+
             <table border="1">
                 <tr>
                     <td rowspan="2" colspan="2"></td>
@@ -175,6 +181,8 @@
                     <td>0</td>
                 </tr>
             </table>
+
+
             <table border="1">
                 <tr>
                     <td rowspan="2" colspan="2"></td>
@@ -224,6 +232,8 @@
                     <td>0</td>
                 </tr>
             </table>
+
+
             <table border="1">
                 <tr>
                     <td rowspan="2" colspan="2"></td>
@@ -274,6 +284,7 @@
                 </tr>
             </table>
 
+            
             <TABLE border="1">
                     <tr>
                         <td>Relaciones</td>

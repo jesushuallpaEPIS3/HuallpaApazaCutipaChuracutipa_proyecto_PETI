@@ -58,5 +58,10 @@
             $query->bindParam(":d4",$d4);
             return $query->execute();
         }
+        public function fodaAll($id){
+            $query = $this->PDO->prepare("SELECT * FROM foda INNER JOIN foda2 WHERE foda.id = :id");
+            $query->bindParam(":id",$id);   
+            return ($query->execute()) ? $query->fetch() : false; 
+        }
     }
 ?>
