@@ -271,7 +271,7 @@ CREATE TABLE IF NOT EXISTS `matrizca` (
   `valores` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.matrizca: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.matrizca: ~16 rows (aproximadamente)
 INSERT INTO `matrizca` (`id`, `valores`) VALUES
 	(445570, 'Reducir costos de producción mediante la optimización de procesos y el uso de materiales más eficientes y menos costosos.'),
 	(445570, 'Inversión en I+D para mejorar la competitividad y actualizar productos constantemente, manteniendo la innovación.'),
@@ -623,7 +623,9 @@ CREATE TABLE IF NOT EXISTS `resumen` (
   `conclusion` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.resumen: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.resumen: ~1 rows (aproximadamente)
+INSERT INTO `resumen` (`id`, `identificacion`, `conclusion`) VALUES
+	(445570, 'EcoTech Solutions debe centrarse en una estrategia de diferenciación que le permita destacarse de sus competidores mediante el desarrollo de productos tecnológicos altamente innovadores y ecológicos. Esto implica ofrecer productos de calidad superior, como dispositivos electrónicos con bajo impacto ambiental y soluciones energéticas renovables, que no solo sean funcionales, sino también accesibles y responsables con el medio ambiente. Además, la empresa debe seguir invirtiendo en investigación y desarrollo (I+D) para mantener su posición como líder en sostenibilidad, mientras aprovecha alianzas estratégicas con otras empresas tecnológicas o instituciones gubernamentales que promuevan la sostenibilidad.  Con una fuerte presencia en mercados internacionales, EcoTech puede beneficiarse de los incentivos gubernamentales y las políticas de sostenibilidad para reducir costos y mejorar la competitividad. Además, a través de campañas educativas sobre el impacto ambiental y los beneficios de sus productos, EcoTech puede atraer a consumidores conscientes del medio ambiente, generando lealtad y fidelización de marca.', 'EcoTech Solutions se encuentra en una posición estratégica para liderar el mercado de tecnología sostenible. Su enfoque en la innovación y el compromiso con la sostenibilidad le otorgan una ventaja competitiva frente a empresas tradicionales. A pesar de algunas debilidades, como los costos de producción más altos y la necesidad de mantener la competitividad en un mercado tecnológico rápido, la empresa puede superar estos desafíos mediante la optimización de sus procesos de fabricación y la constante renovación de sus productos. Aprovechando las oportunidades de crecimiento en la demanda de productos ecológicos y las políticas gubernamentales de apoyo a la sostenibilidad, EcoTech tiene un gran potencial para expandir su presencia globalmente, fortalecer su marca y mantener su liderazgo en el sector.\r\n\r\nLa clave será continuar innovando, adaptándose a las tendencias cambiantes y educando a los consumidores sobre los beneficios de sus soluciones ecológicas. Con una estrategia bien ejecutada, EcoTech Solutions está en camino de convertirse en un referente mundial en tecnología verde.');
 
 -- Volcando estructura para tabla peti.tcm
 CREATE TABLE IF NOT EXISTS `tcm` (
