@@ -8,7 +8,7 @@ require_once '../../config/fpdf/fpdf.php';
 
 // Clase para manejar la conexión a la base de datos con PDO
 class db {
-    private $host = "localhost";
+    private $host = "db";
     private $dbname = "peti";
     private $user = "root";
     private $password = "";
@@ -65,6 +65,11 @@ if (isset($_GET['id'])) {
         $stmtVision->execute([$userId]);
         $vision = $stmtVision->fetch(PDO::FETCH_ASSOC);
 
+        // Consultar datos de la tabla 'valores'
+        $stmtValores = $conexion->prepare("SELECT valores FROM valores WHERE id = ?");
+        $stmtValores->execute([$userId]);
+        $valores = $stmtValores->fetch(PDO::FETCH_ASSOC);
+
         // Consultar datos de la tabla 'objetivos'
         $stmtObjetivos = $conexion->prepare("SELECT id_objetivo, descripcionObj FROM objetivos WHERE id = ?");
         $stmtObjetivos->execute([$userId]);
@@ -75,10 +80,20 @@ if (isset($_GET['id'])) {
         $stmtObjEspecificos->execute([$userId]);
         $objEspecificos = $stmtObjEspecificos->fetchAll(PDO::FETCH_ASSOC);
 
+        // Consultar datos de la tabla 'foda2'
+        $stmtFoda2 = $conexion->prepare("SELECT * FROM foda2 WHERE id = ?");
+        $stmtFoda2->execute([$userId]);
+        $foda2 = $stmtFoda2->fetch(PDO::FETCH_ASSOC);
+
         // Consultar datos de la tabla 'foda'
         $stmtFoda = $conexion->prepare("SELECT * FROM foda WHERE id = ?");
         $stmtFoda->execute([$userId]);
         $foda = $stmtFoda->fetch(PDO::FETCH_ASSOC);
+
+        // Consultar datos de la tabla 'matrizca'
+        $stmtMatrizCA = $conexion->prepare("SELECT valores FROM matrizca WHERE id = ?");
+        $stmtMatrizCA->execute([$userId]);
+        $matrizCA = $stmtMatrizCA->fetch(PDO::FETCH_ASSOC);
 
         // Consultar datos de la tabla 'resumen'
         $stmtResumen = $conexion->prepare("SELECT identificacion, conclusion FROM resumen WHERE id = ?");
@@ -102,20 +117,13 @@ if (isset($_GET['id'])) {
         $pdf->Ln(10);
 
         // Información del usuario
-        $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(50, 10, convertirTexto('ID Usuario:'), 0, 0, 'L');
-        $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(0, 10, $usuario['id'], 0, 1, 'L');
+
 
         $pdf->SetFont('Arial', 'B', 12);
         $pdf->Cell(50, 10, convertirTexto('Username:'), 0, 0, 'L');
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(0, 10, convertirTexto($usuario['username']), 0, 1, 'L');
 
-        $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(50, 10, convertirTexto('Password:'), 0, 0, 'L');
-        $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(0, 10, convertirTexto($usuario['password']), 0, 1, 'L');
         $pdf->Ln(10);
 
         // Información de Información
@@ -139,6 +147,13 @@ if (isset($_GET['id'])) {
         $pdf->MultiCell(0, 10, convertirTexto($vision['vision'] ?? 'No disponible'));
         $pdf->Ln(10);
 
+        // Información de Valores
+        $pdf->SetFont('Arial', 'B', 14);
+        $pdf->Cell(0, 10, convertirTexto('Valores'), 0, 1, 'C');
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell(0, 10, convertirTexto($valores['valores'] ?? 'No disponible'));
+        $pdf->Ln(10);
+
         // Información de Objetivos y Específicos
         $pdf->SetFont('Arial', 'B', 14);
         $pdf->Cell(0, 10, convertirTexto('Objetivos'), 0, 1, 'C');
@@ -153,6 +168,43 @@ if (isset($_GET['id'])) {
             $pdf->SetFont('Arial', '', 12);
             $pdf->MultiCell(0, 10, convertirTexto($esp['descripcionEspObj']));
         }
+        $pdf->Ln(10);
+
+        // Información de FODA
+        $pdf->SetFont('Arial', 'B', 14);
+        $pdf->Cell(0, 10, convertirTexto('FODA'), 0, 1, 'C');
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell(0, 10, convertirTexto($foda['f1'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda['f2'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda['f3'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda['f4'] ?? 'No disponible'));
+
+        $pdf->MultiCell(0, 10, convertirTexto($foda['d1'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda['d2'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda['d3'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda['d4'] ?? 'No disponible'));
+        $pdf->Ln(10);
+
+        // Información de FODA2
+        $pdf->SetFont('Arial', 'B', 14);
+        $pdf->Cell(0, 10, convertirTexto('FODA2'), 0, 1, 'C');
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell(0, 10, convertirTexto($foda2['o1'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda2['o2'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda2['o3'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda2['o4'] ?? 'No disponible'));
+
+        $pdf->MultiCell(0, 10, convertirTexto($foda2['a1'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda2['a2'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda2['a3'] ?? 'No disponible'));
+        $pdf->MultiCell(0, 10, convertirTexto($foda2['a4'] ?? 'No disponible'));
+        $pdf->Ln(10);
+
+        // Información de Matriz CA
+        $pdf->SetFont('Arial', 'B', 14);
+        $pdf->Cell(0, 10, convertirTexto('Matriz CA'), 0, 1, 'C');
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell(0, 10, convertirTexto($matrizCA['valores'] ?? 'No disponible'));
         $pdf->Ln(10);
 
         // Información de Resumen
@@ -173,4 +225,3 @@ if (isset($_GET['id'])) {
     }
 } else {
     die("ID de usuario no proporcionado");
-}
