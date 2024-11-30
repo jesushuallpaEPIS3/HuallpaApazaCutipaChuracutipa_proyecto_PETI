@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.32-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.27-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             12.6.0.6765
+-- HeidiSQL Versión:             12.4.0.6659
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -249,9 +249,9 @@ CREATE TABLE IF NOT EXISTS `foda2` (
   `a4` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.foda2: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla peti.foda2: ~1 rows (aproximadamente)
 INSERT INTO `foda2` (`id`, `o1`, `o2`, `o3`, `o4`, `a1`, `a2`, `a3`, `a4`) VALUES
-	(445567, 'oportunidad 1', 'oportunidad 2', 'oportunidad 3', 'oportunidad 4', 'amenaza 1', 'amenaza 2', 'amenaza 3', 'amenaza 4');
+	(445570, 'Crecimiento de la demanda de productos sostenibles: El interés global por reducir el impacto ambiental y adoptar prácticas ecológicas está en aumento, lo que presenta una oportunidad de expansión en el mercado de productos sostenibles.', 'Incentivos gubernamentales y subsidios: Muchos países están implementando políticas y ofreciendo subsidios para la adopción de tecnologías limpias y renovables, lo que podría beneficiar a EcoTech Solutions al reducir costos y aumentar la accesibilidad a nuevos mercados.', 'Alianzas estratégicas: Existen oportunidades de colaboración con otras empresas tecnológicas o instituciones gubernamentales que promuevan la sostenibilidad, lo que podría facilitar el acceso a nuevos recursos y mercados.', 'Educación y sensibilización ambiental: La creciente preocupación por el cambio climático y la sostenibilidad presenta una oportunidad para que EcoTech amplíe su presencia en el mercado a través de campañas educativas sobre los beneficios de sus productos.', 'Competencia en el sector de tecnología sostenible: La creciente popularidad de la tecnología verde ha atraído a muchas empresas, lo que aumenta la competencia y podría presionar los márgenes de beneficio de EcoTech.', 'Fluctuaciones económicas globales: Factores económicos como recesiones o crisis financieras pueden reducir la demanda de productos sostenibles, que suelen tener un costo más alto que las alternativas tradicionales.', 'Regulaciones ambientales cambiantes: Las normativas sobre sostenibilidad y medio ambiente pueden cambiar con el tiempo, lo que podría generar costes adicionales de adaptación para EcoTech.', 'Cambios en las preferencias de los consumidores: La evolución de las preferencias de los consumidores en tecnología puede ser impredecible. Si EcoTech no se adapta rápidamente a las nuevas tendencias, podría perder cuota de mercado frente a competidores más ágiles.');
 
 -- Volcando estructura para tabla peti.informacion
 CREATE TABLE IF NOT EXISTS `informacion` (
@@ -272,6 +272,23 @@ CREATE TABLE IF NOT EXISTS `matrizca` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Volcando datos para la tabla peti.matrizca: ~0 rows (aproximadamente)
+INSERT INTO `matrizca` (`id`, `valores`) VALUES
+	(445570, 'Reducir costos de producción mediante la optimización de procesos y el uso de materiales más eficientes y menos costosos.'),
+	(445570, 'Inversión en I+D para mejorar la competitividad y actualizar productos constantemente, manteniendo la innovación.'),
+	(445570, 'Estrategias de branding para aumentar el reconocimiento de marca a nivel global y mejorar su visibilidad.'),
+	(445570, 'Alianzas con fabricantes o proveedores para mejorar la producción a gran escala y reducir los costos asociados.'),
+	(445570, 'Diversificación de productos para adaptarse a las tendencias y necesidades cambiantes del mercado.'),
+	(445570, 'Vigilancia de tendencias regulatorias para anticipar cambios en las normativas y ajustarse rápidamente.'),
+	(445570, 'Evaluación de precios competitivos para contrarrestar la competencia y ofrecer alternativas atractivas.'),
+	(445570, 'Desarrollo de productos de bajo costo que atraigan a un segmento más amplio sin sacrificar la sostenibilidad.'),
+	(445570, 'Continuar con la innovación tecnológica para seguir siendo líderes en soluciones sostenibles.'),
+	(445570, 'Reforzar la imagen de marca destacando el compromiso con la sostenibilidad en todas las estrategias de marketing.'),
+	(445570, 'Fomentar la diversificación de productos para mantener la ventaja competitiva en diversos segmentos.'),
+	(445570, 'Promover la cultura organizacional que valore la innovación y sostenibilidad como pilares fundamentales.'),
+	(445570, 'Aprovechar incentivos gubernamentales para reducir costos de producción e impulsar la adopción de productos.'),
+	(445570, 'Formar alianzas estratégicas con otras empresas tecnológicas o entidades del sector ambiental.'),
+	(445570, 'Expandir mercados internacionales donde la demanda de productos ecológicos está en crecimiento.'),
+	(445570, 'Lanzar campañas educativas sobre los beneficios de la sostenibilidad, generando conciencia y posicionamiento de marca.');
 
 -- Volcando estructura para tabla peti.mision
 CREATE TABLE IF NOT EXISTS `mision` (
@@ -477,7 +494,7 @@ CREATE TABLE IF NOT EXISTS `pest` (
   `punto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.pest: ~25 rows (aproximadamente)
+-- Volcando datos para la tabla peti.pest: ~50 rows (aproximadamente)
 INSERT INTO `pest` (`id`, `enunciado`, `punto`) VALUES
 	(445567, 1, 1),
 	(445567, 2, 0),
@@ -503,7 +520,32 @@ INSERT INTO `pest` (`id`, `enunciado`, `punto`) VALUES
 	(445567, 22, 3),
 	(445567, 23, 1),
 	(445567, 24, 1),
-	(445567, 25, 2);
+	(445567, 25, 2),
+	(445570, 1, 2),
+	(445570, 2, 2),
+	(445570, 3, 3),
+	(445570, 4, 4),
+	(445570, 5, 2),
+	(445570, 6, 5),
+	(445570, 7, 4),
+	(445570, 8, 3),
+	(445570, 9, 4),
+	(445570, 10, 2),
+	(445570, 11, 1),
+	(445570, 12, 4),
+	(445570, 13, 3),
+	(445570, 14, 4),
+	(445570, 15, 2),
+	(445570, 16, 3),
+	(445570, 17, 3),
+	(445570, 18, 2),
+	(445570, 19, 2),
+	(445570, 20, 4),
+	(445570, 21, 3),
+	(445570, 22, 4),
+	(445570, 23, 2),
+	(445570, 24, 2),
+	(445570, 25, 3);
 
 -- Volcando estructura para tabla peti.porter
 CREATE TABLE IF NOT EXISTS `porter` (
@@ -512,7 +554,7 @@ CREATE TABLE IF NOT EXISTS `porter` (
   `punto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla peti.porter: ~17 rows (aproximadamente)
+-- Volcando datos para la tabla peti.porter: ~34 rows (aproximadamente)
 INSERT INTO `porter` (`id`, `enunciado`, `punto`) VALUES
 	(445567, 1, 1),
 	(445567, 2, 2),
@@ -530,7 +572,24 @@ INSERT INTO `porter` (`id`, `enunciado`, `punto`) VALUES
 	(445567, 14, 1),
 	(445567, 15, 1),
 	(445567, 16, 1),
-	(445567, 17, 1);
+	(445567, 17, 1),
+	(445570, 1, 2),
+	(445570, 2, 3),
+	(445570, 3, 2),
+	(445570, 4, 3),
+	(445570, 5, 2),
+	(445570, 6, 2),
+	(445570, 7, 3),
+	(445570, 8, 4),
+	(445570, 9, 4),
+	(445570, 10, 4),
+	(445570, 11, 2),
+	(445570, 12, 2),
+	(445570, 13, 2),
+	(445570, 14, 3),
+	(445570, 15, 3),
+	(445570, 16, 2),
+	(445570, 17, 3);
 
 -- Volcando estructura para tabla peti.prevision_ventas
 CREATE TABLE IF NOT EXISTS `prevision_ventas` (
